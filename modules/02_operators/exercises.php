@@ -38,6 +38,7 @@
 
 <body>
     <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_module_nav.php'; ?>
     <h1>Module 2: Operators - Exercises</h1>
     <p><a href="lesson.php">← Back to Lesson</a> | <a href="../index.php">Back to Modules</a></p>
 

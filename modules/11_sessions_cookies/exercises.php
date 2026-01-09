@@ -44,7 +44,7 @@
 </head>
 
 <body>
-    <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_nav_ui.php'; ?> <?php include __DIR__ . '/../_module_nav.php'; ?>
     <h1>Module 11: Sessions and Cookies - Exercises</h1>
 
     <div class="exercise">

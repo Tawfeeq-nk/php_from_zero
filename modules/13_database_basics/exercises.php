@@ -68,7 +68,8 @@
 </head>
 
 <body>
-
+    <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_module_nav.php'; ?>
     <div class="container">
         <h1>📝 MODULE 13: EXERCISES - Database Basics</h1>
         <p>Complete all exercises and check solutions below.</p>

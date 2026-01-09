@@ -10,7 +10,8 @@
 </head>
 
 <body>
-
+    <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_module_nav.php'; ?>
     <h1>📝 MODULE 17: EXERCISES - Security Basics</h1>
     <p>Practice implementing security measures in PHP applications.</p>
 

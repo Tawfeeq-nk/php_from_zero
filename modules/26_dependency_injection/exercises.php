@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_module_nav.php'; ?>
     <h1>📝 MODULE 26: EXERCISES - Dependency Injection</h1>
 </body>
 

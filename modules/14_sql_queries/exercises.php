@@ -67,7 +67,8 @@
 </head>
 
 <body>
-
+    <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_module_nav.php'; ?>
     <div class="container">
         <h1>📝 MODULE 14: EXERCISES - SQL Queries</h1>
         <p>Practice advanced SQL queries with real-world scenarios.</p>

@@ -27,7 +27,8 @@
 </head>
 
 <body>
-
+    <?php include __DIR__ . '/../_nav_ui.php'; ?>
+    <?php include __DIR__ . '/../_module_nav.php'; ?>
     <div class="container">
         <h1>📝 MODULE 16: EXERCISES - Error Handling</h1>
         <p>Practice proper error handling in production code.</p>

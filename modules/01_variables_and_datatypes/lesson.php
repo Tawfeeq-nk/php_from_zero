@@ -46,7 +46,15 @@
 
 <body>
     <h1>Module 1: Variables and Data Types</h1>
-    <p><a href="../index.php">← Back to Modules</a> | <a href="exercises.php">Try Exercises →</a></p>
+    <div style="background:#f8f9fa;padding:15px;border-radius:8px;margin-bottom:20px;display:flex;gap:15px;flex-wrap:wrap;align-items:center;">
+        <a href="../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">← Back to Modules</a>
+        <span style="color:#ddd;">|</span>
+        <a href="exercises.php" style="color:#667eea;text-decoration:none;font-weight:500;">Try Exercises →</a>
+        <span style="color:#ddd;">|</span>
+        <a href="../../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Home</a>
+        <span style="color:#ddd;">|</span>
+        <a href="../../projects/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Projects</a>
+    </div>
 
     <h2>1. What are Variables?</h2>
     <p>Variables are containers that store data. In PHP, variables start with a <code>$</code> sign.</p>
@@ -256,7 +264,13 @@
         <li>Constants are defined with <code>define()</code> or <code>const</code></li>
     </ul>
 
-    <p><a href="../index.php">← Back to Modules</a> | <a href="exercises.php">Try Exercises →</a></p>
+    <div style="margin-top:40px;padding-top:20px;border-top:2px solid #ddd;">
+        <p style="color:#666;">
+            <a href="../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">← Back to Modules</a> | 
+            <a href="exercises.php" style="color:#667eea;text-decoration:none;font-weight:500;">Try Exercises →</a> | 
+            <a href="../../START_HERE.php" style="color:#667eea;text-decoration:none;font-weight:500;">Dashboard</a>
+        </p>
+    </div>
 </body>
 
 </html>

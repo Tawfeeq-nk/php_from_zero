@@ -119,6 +119,7 @@
                 <a class="btn btn-primary" href="START_HERE.php">Open Dashboard</a>
                 <a class="btn btn-outline" href="GETTING_STARTED.php">Getting Started</a>
                 <a class="btn btn-outline" href="modules/index.php">All Modules</a>
+                <a class="btn btn-outline" href="projects/index.php">Projects</a>
             </div>
         </div>
     </header>

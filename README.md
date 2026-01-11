@@ -29,7 +29,7 @@ Each module contains:
 11. **Sessions & Cookies** - State management
 12. **OOP Basics** - Object-oriented programming
 
-### LEVEL 2: INTERMEDIATE (Modules 13-18) 🎯 CURRENT
+### LEVEL 2: INTERMEDIATE (Modules 13-18) 
 
 13. **Database Basics** - MySQL, PDO, CRUD operations
 14. **SQL Queries** - Advanced queries, JOINs, aggregation

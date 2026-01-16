@@ -53,12 +53,12 @@
     <h2>1. If Statement</h2>
     <p>Executes code if condition is true</p>
     <div class="example">
-        <pre><?php
+        <pre>&lt;?php
         $age = 20;
         if ($age >= 18) {
-            echo "You are an adult.<br>";
+            echo "You are an adult.&lt;br>";
         }
-        ?></pre>
+        ?&gt;</pre>
         <p><strong>Output:</strong></p>
         <?php
         $age = 20;
@@ -71,14 +71,14 @@
     <h2>2. If-Else Statement</h2>
     <p>Executes one block if true, another if false</p>
     <div class="example">
-        <pre><?php
+        <pre>&lt;?php
         $age = 15;
         if ($age >= 18) {
-            echo "You are an adult.<br>";
+            echo "You are an adult.&lt;br>";
         } else {
-            echo "You are a minor.<br>";
+            echo "You are a minor.&lt;br>";
         }
-        ?></pre>
+        ?&gt;</pre>
         <p><strong>Output:</strong></p>
         <?php
         $age = 15;
@@ -93,18 +93,18 @@
     <h2>3. If-Elseif-Else Statement</h2>
     <p>Checks multiple conditions</p>
     <div class="example">
-        <pre><?php
+        <pre>&lt;?php
         $score = 85;
         if ($score >= 90) {
-            echo "Grade: A<br>";
+            echo "Grade: A&lt;br>";
         } elseif ($score >= 80) {
-            echo "Grade: B<br>";
+            echo "Grade: B&lt;br>";
         } elseif ($score >= 70) {
-            echo "Grade: C<br>";
+            echo "Grade: C&lt;br>";
         } else {
-            echo "Grade: F<br>";
+            echo "Grade: F&lt;br>";
         }
-        ?></pre>
+        ?&gt;</pre>
         <p><strong>Output:</strong></p>
         <?php
         $score = 85;
@@ -123,16 +123,16 @@
     <h2>4. Ternary Operator</h2>
     <p>Short form of if-else: <code>condition ? value_if_true : value_if_false</code></p>
     <div class="example">
-        <pre><?php
+        <pre>&lt;?php
         $age = 20;
         $status = ($age >= 18) ? "Adult" : "Minor";
-        echo "Status: $status<br>";
+        echo "Status: $status&lt;br>";
 
         // Nested ternary
         $score = 85;
         $grade = ($score >= 90) ? "A" : (($score >= 80) ? "B" : "C");
-        echo "Grade: $grade<br>";
-        ?></pre>
+        echo "Grade: $grade&lt;br>";
+        ?&gt;</pre>
         <p><strong>Output:</strong></p>
         <?php
         $age = 20;
@@ -147,23 +147,23 @@
     <h2>5. Switch Statement</h2>
     <p>Selects one of many blocks to execute</p>
     <div class="example">
-        <pre><?php
+        <pre>&lt;?php
         $day = "Monday";
         switch ($day) {
             case "Monday":
-                echo "Start of work week<br>";
+                echo "Start of work week&lt;br>";
                 break;
             case "Friday":
-                echo "TGIF!<br>";
+                echo "TGIF!&lt;br>";
                 break;
             case "Saturday":
             case "Sunday":
-                echo "Weekend!<br>";
+                echo "Weekend!&lt;br>";
                 break;
             default:
-                echo "Regular weekday<br>";
+                echo "Regular weekday&lt;br>";
         }
-        ?></pre>
+        ?&gt;</pre>
         <p><strong>Output:</strong></p>
         <?php
         $day = "Monday";
@@ -187,7 +187,7 @@
     <h2>6. Match Expression (PHP 8.0+)</h2>
     <p>Modern alternative to switch (returns a value)</p>
     <div class="example">
-        <pre><?php
+        <pre>&lt;?php
         $status = 404;
         $message = match ($status) {
             200 => "OK",
@@ -195,17 +195,25 @@
             500 => "Server Error",
             default => "Unknown Status"
         };
-        echo "Status $status: $message<br>";
-        ?></pre>
+        echo "Status $status: $message&lt;br>";
+        ?&gt;</pre>
         <p><strong>Output:</strong></p>
         <?php
         $status = 404;
-        $message = match ($status) {
-            200 => "OK",
-            404 => "Not Found",
-            500 => "Server Error",
-            default => "Unknown Status"
-        };
+        $message = "";
+        switch ($status) {
+            case 200:
+                $message = "OK";
+                break;
+            case 404:
+                $message = "Not Found";
+                break;
+            case 500:
+                $message = "Server Error";
+                break;
+            default:
+                $message = "Unknown Status";
+        }
         echo "Status $status: $message<br>";
         ?>
     </div>

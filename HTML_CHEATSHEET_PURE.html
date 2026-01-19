@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML Cheatsheet - Learn & Practice</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family:
+					-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+					Cantarell, sans-serif;
+				line-height: 1.6;
+				color: #2c3e50;
+				background-color: #f5f7fa;
+			}
+
+			header {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2rem;
+				text-align: center;
+			}
+
+			header h1 {
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+			}
+
+			header p {
+				font-size: 1.1rem;
+				opacity: 0.9;
+			}
+
+			nav {
+				background: white;
+				border-bottom: 2px solid #e0e0e0;
+				padding: 0;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			nav ul {
+				list-style: none;
+				display: flex;
+				flex-wrap: wrap;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			nav a {
+				display: block;
+				padding: 1rem 1.5rem;
+				text-decoration: none;
+				color: #667eea;
+				font-weight: 500;
+				transition:
+					background-color 0.3s,
+					color 0.3s;
+				border-bottom: 3px solid transparent;
+			}
+
+			nav a:hover {
+				background-color: #f5f7fa;
+				border-bottom-color: #667eea;
+				color: #764ba2;
+			}
+
+			main {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 2rem;
+			}
+
+			section {
+				background: white;
+				border-radius: 8px;
+				padding: 2rem;
+				margin-bottom: 2rem;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+
+			h1 {
+				color: #667eea;
+				margin-bottom: 1rem;
+				border-bottom: 2px solid #667eea;
+				padding-bottom: 0.5rem;
+			}
+
+			h2 {
+				color: #764ba2;
+				margin-top: 1.5rem;
+				margin-bottom: 0.75rem;
+				font-size: 1.5rem;
+			}
+
+			h3 {
+				color: #667eea;
+				margin-top: 1rem;
+				margin-bottom: 0.5rem;
+			}
+
+			p {
+				margin-bottom: 1rem;
+			}
+
+			ul,
+			ol {
+				margin-left: 2rem;
+				margin-bottom: 1rem;
+			}
+
+			li {
+				margin-bottom: 0.5rem;
+			}
+
+			code {
+				background: #f5f7fa;
+				color: #d63384;
+				padding: 0.2rem 0.5rem;
+				border-radius: 3px;
+				font-family: "Courier New", Courier, monospace;
+				font-size: 0.9em;
+			}
+
+			pre {
+				background: #f5f7fa;
+				border-left: 4px solid #667eea;
+				padding: 1rem;
+				border-radius: 4px;
+				overflow-x: auto;
+				margin-bottom: 1rem;
+			}
+
+			pre code {
+				background: none;
+				color: inherit;
+				padding: 0;
+				border-radius: 0;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 1rem 0;
+			}
+
+			table th {
+				background: #667eea;
+				color: white;
+				padding: 0.75rem;
+				text-align: left;
+			}
+
+			table td {
+				padding: 0.75rem;
+				border-bottom: 1px solid #e0e0e0;
+			}
+
+			table tr:hover {
+				background: #f5f7fa;
+			}
+
+			.example {
+				background: #e8f4f8;
+				border: 1px solid #667eea;
+				border-radius: 4px;
+				padding: 1rem;
+				margin: 1rem 0;
+			}
+
+			.example-title {
+				font-weight: bold;
+				color: #667eea;
+				margin-bottom: 0.5rem;
+			}
+
+			.tip {
+				background: #d4edda;
+				border-left: 4px solid #28a745;
+				border-radius: 4px;
+				padding: 1rem;
+				margin: 1rem 0;
+				color: #155724;
+			}
+
+			.tip::before {
+				content: "💡 Tip: ";
+				font-weight: bold;
+			}
+
+			.tag-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin: 1rem 0;
+			}
+
+			.tag-item {
+				background: #f5f7fa;
+				border-left: 4px solid #667eea;
+				padding: 1rem;
+				border-radius: 4px;
+			}
+
+			.tag-item code {
+				display: block;
+				font-weight: bold;
+				color: #d63384;
+				margin-bottom: 0.5rem;
+			}
+
+			.tag-item p {
+				margin: 0;
+				font-size: 0.9rem;
+			}
+
+			.form-example {
+				background: #f5f7fa;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				padding: 1rem;
+				margin: 1rem 0;
+			}
+
+			.form-example input,
+			.form-example textarea,
+			.form-example select {
+				display: block;
+				width: 100%;
+				padding: 0.5rem;
+				margin: 0.5rem 0;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				font-family: inherit;
+				font-size: inherit;
+			}
+
+			.form-example button {
+				background: #667eea;
+				color: white;
+				padding: 0.75rem 1.5rem;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				font-weight: 500;
+				transition: background 0.3s;
+			}
+
+			.form-example button:hover {
+				background: #764ba2;
+			}
+
+			footer {
+				background: #2c3e50;
+				color: white;
+				text-align: center;
+				padding: 1.5rem;
+				margin-top: 2rem;
+			}
+
+			@media (max-width: 768px) {
+				nav ul {
+					flex-direction: column;
+				}
+
+				nav a {
+					padding: 0.75rem 1rem;
+				}
+
+				header h1 {
+					font-size: 1.8rem;
+				}
+
+				main {
+					padding: 1rem;
+				}
+
+				section {
+					padding: 1rem;
+				}
+
+				.tag-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>📚 HTML Cheatsheet</h1>
+			<p>Learn HTML basics, view examples, and practice your skills</p>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="#intro">Introduction</a></li>
+				<li><a href="#structure">Structure</a></li>
+				<li><a href="#text">Text Tags</a></li>
+				<li><a href="#links">Links & Images</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#semantic">Semantic HTML</a></li>
+				<li><a href="#attributes">Attributes</a></li>
+				<li><a href="#practices">Practices</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<!-- Introduction Section -->
+			<section id="intro">
+				<h1>Introduction to HTML</h1>
+
+				<h2>What is HTML?</h2>
+				<p>
+					HTML (HyperText Markup Language) is the standard markup language used
+					to create web pages. It provides the structure and content of
+					websites.
+				</p>
+
+				<h2>Basic HTML Document Structure</h2>
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Your content goes here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+				<h2>Key Concepts</h2>
+				<ul>
+					<li>
+						<strong>Elements:</strong> HTML elements are the building blocks
+						(tags with opening and closing)
+					</li>
+					<li>
+						<strong>Tags:</strong> Keywords surrounded by angle brackets
+						&lt;&gt;
+					</li>
+					<li>
+						<strong>Attributes:</strong> Provide additional information about
+						elements
+					</li>
+					<li>
+						<strong>Nested Tags:</strong> Tags within tags create hierarchy
+					</li>
+				</ul>
+
+				<div class="tip">
+					Always start with &lt;!DOCTYPE html&gt; and close all opened tags
+					properly.
+				</div>
+			</section>
+
+			<!-- Structure Section -->
+			<section id="structure">
+				<h1>HTML Document Structure</h1>
+
+				<h2>Head Section</h2>
+				<p>
+					The &lt;head&gt; contains metadata and doesn't display on the page:
+				</p>
+				<pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;style&gt;/* CSS here */&lt;/style&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+
+				<h2>Body Section</h2>
+				<p>The &lt;body&gt; contains all visible page content:</p>
+				<pre><code>&lt;body&gt;
+  &lt;h1&gt;Main Heading&lt;/h1&gt;
+  &lt;p&gt;Paragraph of text&lt;/p&gt;
+  &lt;!-- More content --&gt;
+&lt;/body&gt;</code></pre>
+
+				<h2>Common Structure Elements</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tag</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>&lt;header&gt;</code></td>
+							<td>Header section</td>
+							<td><code>&lt;header&gt;Logo and Nav&lt;/header&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&lt;nav&gt;</code></td>
+							<td>Navigation links</td>
+							<td><code>&lt;nav&gt;Menu items&lt;/nav&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&lt;main&gt;</code></td>
+							<td>Main content</td>
+							<td><code>&lt;main&gt;Page content&lt;/main&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&lt;footer&gt;</code></td>
+							<td>Footer section</td>
+							<td><code>&lt;footer&gt;Copyright info&lt;/footer&gt;</code></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<!-- Text Tags Section -->
+			<section id="text">
+				<h1>Text & Formatting Tags</h1>
+
+				<h2>Headings</h2>
+				<p>Use h1 to h6 for headings (h1 is largest):</p>
+				<pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Smaller Heading&lt;/h3&gt;</code></pre>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<h1 style="margin: 0; font-size: 1.8rem">Main Heading</h1>
+					<h2 style="margin: 0; font-size: 1.3rem; margin-top: 0.5rem">
+						Subheading
+					</h2>
+					<h3 style="margin: 0; font-size: 1rem; margin-top: 0.5rem">
+						Smaller Heading
+					</h3>
+				</div>
+
+				<h2>Paragraphs & Text</h2>
+				<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;br&gt; &lt;!-- Line break --&gt;
+&lt;hr&gt; &lt;!-- Horizontal line --&gt;
+&lt;strong&gt;Bold text&lt;/strong&gt; or &lt;b&gt;Bold&lt;/b&gt;
+&lt;em&gt;Italic text&lt;/em&gt; or &lt;i&gt;Italic&lt;/i&gt;
+&lt;u&gt;Underlined text&lt;/u&gt;
+&lt;del&gt;Deleted text&lt;/del&gt;
+&lt;mark&gt;Highlighted text&lt;/mark&gt;</code></pre>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<p style="margin: 0"><strong>Bold text</strong></p>
+					<p style="margin: 0.25rem 0"><em>Italic text</em></p>
+					<p style="margin: 0.25rem 0"><u>Underlined text</u></p>
+					<p style="margin: 0.25rem 0"><del>Deleted text</del></p>
+					<p style="margin: 0"><mark>Highlighted text</mark></p>
+				</div>
+
+				<h2>Lists</h2>
+				<pre><code>&lt;!-- Unordered List --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+				<h2>Code & Preformatted Text</h2>
+				<pre><code>&lt;code&gt;Inline code&lt;/code&gt;
+&lt;pre&gt;Preformatted text&lt;/pre&gt;</code></pre>
+			</section>
+
+			<!-- Links & Images Section -->
+			<section id="links">
+				<h1>Links & Images</h1>
+
+				<h2>Links</h2>
+				<pre><code>&lt;!-- External link --&gt;
+&lt;a href="https://example.com"&gt;Click here&lt;/a&gt;
+
+&lt;!-- Link with target --&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Open in new tab&lt;/a&gt;
+
+&lt;!-- Internal link --&gt;
+&lt;a href="about.html"&gt;About&lt;/a&gt;
+
+&lt;!-- Anchor link --&gt;
+&lt;a href="#section1"&gt;Jump to section&lt;/a&gt;</code></pre>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<a href="#" style="color: #667eea; text-decoration: none"
+						>Click here</a
+					>
+					<br /><br />
+					<a href="#" style="color: #667eea; text-decoration: none"
+						>Open in new tab</a
+					>
+				</div>
+
+				<h2>Images</h2>
+				<pre><code>&lt;!-- Basic image --&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+
+&lt;!-- Image with attributes --&gt;
+&lt;img src="photo.jpg" 
+     alt="My photo" 
+     width="200" 
+     height="150"&gt;
+
+&lt;!-- Image as link --&gt;
+&lt;a href="page.html"&gt;
+  &lt;img src="thumb.jpg" alt="Thumbnail"&gt;
+&lt;/a&gt;</code></pre>
+
+				<div class="tip">
+					Always include an alt attribute for images. It describes the image if
+					it can't be loaded and helps with accessibility.
+				</div>
+			</section>
+
+			<!-- Forms Section -->
+			<section id="forms">
+				<h1>HTML Forms</h1>
+
+				<h2>Basic Form Structure</h2>
+				<pre><code>&lt;form action="/submit" method="POST"&gt;
+  &lt;input type="text" name="username" placeholder="Enter username"&gt;
+  &lt;input type="password" name="password" placeholder="Enter password"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<div class="form-example">
+						<form onsubmit="return false;">
+							<input type="text" placeholder="Enter username" />
+							<input type="password" placeholder="Enter password" />
+							<button type="submit">Submit</button>
+						</form>
+					</div>
+				</div>
+
+				<h2>Input Types</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>text</td>
+							<td>Single line text</td>
+							<td><code>&lt;input type="text"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>email</td>
+							<td>Email input</td>
+							<td><code>&lt;input type="email"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>password</td>
+							<td>Password (hidden)</td>
+							<td><code>&lt;input type="password"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>number</td>
+							<td>Numeric input</td>
+							<td><code>&lt;input type="number"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>date</td>
+							<td>Date picker</td>
+							<td><code>&lt;input type="date"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>checkbox</td>
+							<td>Multiple selection</td>
+							<td><code>&lt;input type="checkbox"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>radio</td>
+							<td>Single selection</td>
+							<td><code>&lt;input type="radio"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>file</td>
+							<td>File upload</td>
+							<td><code>&lt;input type="file"&gt;</code></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2>Form Elements</h2>
+				<pre><code>&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input id="username" type="text" name="username"&gt;
+
+&lt;textarea name="message" rows="4" cols="50"&gt;&lt;/textarea&gt;
+
+&lt;select name="options"&gt;
+  &lt;option&gt;Choose one&lt;/option&gt;
+  &lt;option&gt;Option 1&lt;/option&gt;
+  &lt;option&gt;Option 2&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<div class="form-example">
+						<label for="msg">Message:</label>
+						<textarea
+							id="msg"
+							rows="4"
+							placeholder="Enter your message..."
+						></textarea>
+						<select>
+							<option>Choose one</option>
+							<option>Option 1</option>
+							<option>Option 2</option>
+						</select>
+						<button>Send</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- Semantic HTML Section -->
+			<section id="semantic">
+				<h1>Semantic HTML</h1>
+
+				<h2>What is Semantic HTML?</h2>
+				<p>
+					Semantic HTML uses tags that clearly describe their meaning and
+					purpose to both browsers and developers. This improves accessibility
+					and SEO.
+				</p>
+
+				<h2>Semantic Tags</h2>
+				<div class="tag-grid">
+					<div class="tag-item">
+						<code>&lt;header&gt;</code>
+						<p>Introductory content or navigation</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;nav&gt;</code>
+						<p>Navigation links</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;main&gt;</code>
+						<p>Main content of the page</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;article&gt;</code>
+						<p>Self-contained content like blog posts</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;section&gt;</code>
+						<p>Thematic grouping of content</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;aside&gt;</code>
+						<p>Sidebar or related content</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;footer&gt;</code>
+						<p>Footer information</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;figure&gt;</code>
+						<p>Illustration, diagram, photo</p>
+					</div>
+				</div>
+
+				<h2>Semantic Example</h2>
+				<pre><code>&lt;article&gt;
+  &lt;h1&gt;Article Title&lt;/h1&gt;
+  &lt;p&gt;Article content...&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;figure&gt;
+  &lt;img src="chart.png" alt="Sales chart"&gt;
+  &lt;figcaption&gt;Figure 1: Sales by quarter&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+			</section>
+
+			<!-- Attributes Section -->
+			<section id="attributes">
+				<h1>HTML Attributes</h1>
+
+				<h2>Global Attributes</h2>
+				<p>These attributes can be used on any HTML element:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Attribute</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>class</code></td>
+							<td>CSS class name(s)</td>
+							<td><code>&lt;p class="intro highlight"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>id</code></td>
+							<td>Unique identifier</td>
+							<td><code>&lt;p id="main-text"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>style</code></td>
+							<td>Inline CSS styles</td>
+							<td><code>&lt;p style="color: red;"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>title</code></td>
+							<td>Tooltip text on hover</td>
+							<td><code>&lt;p title="Hover text"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>data-*</code></td>
+							<td>Custom data attributes</td>
+							<td><code>&lt;p data-age="25"&gt;</code></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2>Common Attributes by Tag</h2>
+				<pre><code>&lt;!-- For links --&gt;
+&lt;a href="url" target="_blank" title="tooltip"&gt;Link&lt;/a&gt;
+
+&lt;!-- For images --&gt;
+&lt;img src="path.jpg" alt="description" width="100" height="100"&gt;
+
+&lt;!-- For inputs --&gt;
+&lt;input type="text" name="field" required disabled placeholder="hint"&gt;
+
+&lt;!-- For forms --&gt;
+&lt;form action="url" method="POST" enctype="multipart/form-data"&gt;</code></pre>
+			</section>
+
+			<!-- Practices Section -->
+			<section id="practices">
+				<h1>Practice Exercises</h1>
+
+				<h2>Exercise 1: Create a Simple Webpage</h2>
+				<p><strong>Task:</strong> Create a simple webpage with:</p>
+				<ul>
+					<li>A title in the head</li>
+					<li>An h1 heading</li>
+					<li>A paragraph</li>
+					<li>A list with 3 items</li>
+				</ul>
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to My Webpage&lt;/h1&gt;
+  &lt;p&gt;This is a simple paragraph.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+				<h2>Exercise 2: Create a Contact Form</h2>
+				<p><strong>Task:</strong> Build a contact form with:</p>
+				<ul>
+					<li>Name input field</li>
+					<li>Email input field</li>
+					<li>Message textarea</li>
+					<li>Submit button</li>
+				</ul>
+				<pre><code>&lt;form action="/contact" method="POST"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+				<h2>Exercise 3: Create a Blog Post</h2>
+				<p>
+					<strong>Task:</strong> Use semantic HTML to structure a blog post:
+				</p>
+				<pre><code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Blog Post&lt;/h1&gt;
+    &lt;time datetime="2026-01-20"&gt;January 20, 2026&lt;/time&gt;
+  &lt;/header&gt;
+
+  &lt;p&gt;Introduction paragraph...&lt;/p&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Main Point&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Author: Your Name&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+
+				<h2>Exercise 4: Create a Portfolio Page Structure</h2>
+				<p>
+					<strong>Task:</strong> Structure a portfolio page with proper semantic
+					HTML:
+				</p>
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#portfolio"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id="about"&gt;
+      &lt;h2&gt;About Me&lt;/h2&gt;
+      &lt;p&gt;...&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="portfolio"&gt;
+      &lt;h2&gt;My Projects&lt;/h2&gt;
+      &lt;!-- Projects list --&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+				<h2>Additional Practice Ideas</h2>
+				<ul>
+					<li>Create a recipe page with ingredients and instructions</li>
+					<li>Build a product listing page with multiple products</li>
+					<li>Create a FAQ section with questions and answers</li>
+					<li>Build a navigation menu with dropdown items</li>
+					<li>Create a table comparing different products</li>
+					<li>Build a login and registration form</li>
+				</ul>
+
+				<div class="tip">
+					Try creating these projects without looking at the examples. When
+					you're done, compare your code with the examples to see if you missed
+					anything.
+				</div>
+			</section>
+
+			<!-- Quick Reference -->
+			<section>
+				<h1>Quick Reference</h1>
+
+				<h2>Common HTML Tags</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tag</th>
+							<th>Description</th>
+							<th>Self-Closing</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>&lt;div&gt;</code></td>
+							<td>Generic container</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td><code>&lt;span&gt;</code></td>
+							<td>Inline container</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td><code>&lt;br&gt;</code></td>
+							<td>Line break</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;hr&gt;</code></td>
+							<td>Horizontal line</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;img&gt;</code></td>
+							<td>Image</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;input&gt;</code></td>
+							<td>Input field</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;meta&gt;</code></td>
+							<td>Metadata</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;link&gt;</code></td>
+							<td>Link resource</td>
+							<td>Yes</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2026 HTML Cheatsheet - A Learning Resource</p>
+			<p>Created for HTML beginners and practitioners</p>
+		</footer>
+	</body>
+</html>

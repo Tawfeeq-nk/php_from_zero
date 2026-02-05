@@ -5,374 +5,155 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>HTML Cheatsheet - Learn & Practice</title>
 		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
+			:root {
+				/* GitHub-like theme variables */
+				--bg: #0d1117;
+				--surface: #0f1419;
+				--card: #0d1117;
+				--muted-surface: #0b1014;
+				--text: #c9d1d9;
+				--muted-text: #c3c7ca;
+				--accent: #58a6ff; /* GitHub blue */
+				--accent-2: #bf5af2; /* purple accent */
+				--border: #30363d;
+				--code-bg: #010409;
+				--tip-bg: #07311a;
 			}
+
+			* { box-sizing: border-box; margin: 0; padding: 0; }
 
 			body {
-				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+				background: var(--bg);
+				color: var(--text);
 				line-height: 1.6;
-				color: #333;
-				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 				min-height: 100vh;
-				padding: 20px;
-			}
-
-			.container {
-				max-width: 1200px;
-				margin: 0 auto;
-				background: white;
-				border-radius: 10px;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-				overflow: hidden;
 			}
 
 			header {
-				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-				color: white;
-				padding: 40px 20px;
+				background: linear-gradient(180deg, #0b2750 0%, #0d1117 100%);
+				color: var(--text);
+				padding: 2rem;
 				text-align: center;
+				border-bottom: 1px solid var(--border);
 			}
 
-			header h1 {
-				font-size: 2.5em;
-				margin-bottom: 10px;
-			}
+			header h1 { font-size: 2.2rem; margin-bottom: 0.25rem; }
+			header p { color: var(--muted-text); }
 
-			header p {
-				font-size: 1.1em;
-				opacity: 0.9;
-			}
+			nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 90; }
 
-			nav {
-				background: #f8f9fa;
-				padding: 15px;
-				border-bottom: 2px solid #ddd;
-				display: flex;
-				flex-wrap: wrap;
-				gap: 10px;
-			}
+			nav ul { list-style: none; display: flex; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
 
-			nav button {
-				padding: 10px 20px;
-				background: #667eea;
-				color: white;
-				border: none;
-				border-radius: 5px;
-				cursor: pointer;
-				font-size: 0.95em;
-				transition: all 0.3s ease;
-			}
+			nav a { display: block; padding: 0.85rem 1.25rem; text-decoration: none; color: var(--muted-text); font-weight: 600; border-bottom: 3px solid transparent; }
 
-			nav button:hover {
-				background: #764ba2;
-				transform: translateY(-2px);
-			}
+			nav a:hover { color: var(--accent); background: rgba(88,166,255,0.04); border-bottom-color: rgba(88,166,255,0.14); }
 
-			nav button.active {
-				background: #764ba2;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-			}
+			main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
-			.content {
-				display: flex;
-			}
+			section { background: var(--card); border-radius: 8px; padding: 1.6rem; margin-bottom: 1.5rem; border: 1px solid var(--border); box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset; }
 
-			.sidebar {
-				width: 250px;
-				background: #f8f9fa;
-				border-right: 2px solid #ddd;
-				padding: 20px;
-				max-height: 600px;
-				overflow-y: auto;
-			}
+			h1 { color: var(--text); margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.5rem; }
 
-			.sidebar h3 {
-				margin-top: 20px;
-				margin-bottom: 10px;
-				color: #667eea;
-				font-size: 0.95em;
-			}
+			h2 { color: var(--text); margin-top: 1rem; margin-bottom: 0.6rem; }
 
-			.sidebar a {
-				display: block;
-				padding: 8px 12px;
-				color: #333;
-				text-decoration: none;
-				border-radius: 5px;
-				margin-bottom: 5px;
-				transition: all 0.2s ease;
-			}
+			h3 { color: var(--accent); margin-top: 0.75rem; margin-bottom: 0.4rem; }
 
-			.sidebar a:hover {
-				background: #e0e0e0;
-				padding-left: 20px;
-			}
+			p { color: var(--muted-text); margin-bottom: 1rem; }
 
-			.main-content {
-				flex: 1;
-				padding: 30px;
-			}
+			ul, ol { margin-left: 1.25rem; margin-bottom: 1rem; }
 
-			.section {
-				display: none;
-			}
+			li { margin-bottom: 0.5rem; color: var(--muted-text); }
 
-			.section.active {
-				display: block;
-				animation: fadeIn 0.3s ease;
-			}
+			code { background: var(--code-bg); color: #79c0ff; padding: 0.18rem 0.4rem; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.95em; }
 
-			@keyframes fadeIn {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
+			pre { background: #010409; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 1rem; color: var(--muted-text); }
 
-			.section h2 {
-				color: #667eea;
-				margin-bottom: 20px;
-				border-bottom: 2px solid #667eea;
-				padding-bottom: 10px;
-			}
+			pre code { background: none; color: inherit; padding: 0; }
 
-			.subsection {
-				margin-bottom: 30px;
-			}
+			table { width: 100%; border-collapse: collapse; margin: 1rem 0; color: var(--muted-text); }
 
-			.subsection h3 {
-				color: #764ba2;
-				margin-top: 20px;
-				margin-bottom: 10px;
-			}
+			table th { background: #0b1220; color: var(--text); padding: 0.65rem; text-align: left; border-bottom: 1px solid var(--border); }
 
-			.code-block {
-				background: #f5f5f5;
-				border-left: 4px solid #667eea;
-				padding: 15px;
-				margin: 15px 0;
-				border-radius: 5px;
-				overflow-x: auto;
-				font-family: "Courier New", monospace;
-				font-size: 0.9em;
-			}
+			table td { padding: 0.65rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
 
-			.code-block code {
-				color: #d63384;
-			}
+			table tr:hover { background: rgba(255,255,255,0.01); }
 
-			.example {
-				background: #f0f4ff;
-				border: 1px solid #667eea;
-				border-radius: 5px;
-				padding: 15px;
-				margin: 15px 0;
-			}
+			.example { background: rgba(88,166,255,0.03); border: 1px solid rgba(88,166,255,0.06); border-radius: 6px; padding: 0.9rem; margin: 0.9rem 0; }
 
-			.example-title {
-				font-weight: bold;
-				color: #667eea;
-				margin-bottom: 10px;
-			}
+			.example-title { font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
 
-			.experiment {
-				background: #fff3cd;
-				border: 2px dashed #ffc107;
-				border-radius: 5px;
-				padding: 15px;
-				margin: 15px 0;
-			}
+			.tip { background: var(--tip-bg); border-left: 4px solid #238636; border-radius: 6px; padding: 0.9rem; margin: 0.9rem 0; color: #dff6e9; }
 
-			.experiment-title {
-				font-weight: bold;
-				color: #856404;
-				margin-bottom: 10px;
-			}
+			.tip::before { content: "💡 Tip: "; font-weight: 700; }
 
-			textarea {
-				width: 100%;
-				padding: 10px;
-				border: 1px solid #ddd;
-				border-radius: 5px;
-				font-family: "Courier New", monospace;
-				margin: 10px 0;
-				height: 200px;
-			}
+			.tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.9rem; margin: 0.9rem 0; }
 
-			button.btn-primary {
-				background: #667eea;
-				color: white;
-				border: none;
-				padding: 10px 20px;
-				border-radius: 5px;
-				cursor: pointer;
-				margin: 10px 0;
-				transition: all 0.3s ease;
-			}
+			.tag-item { background: rgba(255,255,255,0.02); border-left: 4px solid var(--accent); padding: 0.9rem; border-radius: 6px; }
 
-			button.btn-primary:hover {
-				background: #764ba2;
-				transform: translateY(-2px);
-			}
+			.tag-item code { display: block; font-weight: 700; color: #79c0ff; margin-bottom: 0.35rem; }
 
-			.output {
-				background: white;
-				border: 1px solid #ddd;
-				border-radius: 5px;
-				padding: 15px;
-				margin-top: 10px;
-				min-height: 100px;
-			}
+			.tag-item p { margin: 0; color: var(--muted-text); }
 
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				margin: 15px 0;
-			}
+			.form-example { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); border-radius: 6px; padding: 0.9rem; margin: 0.9rem 0; }
 
-			table th {
-				background: #667eea;
-				color: white;
-				padding: 12px;
-				text-align: left;
-			}
+			.form-example input, .form-example textarea, .form-example select { display: block; width: 100%; padding: 0.55rem; margin: 0.45rem 0; border: 1px solid var(--border); border-radius: 6px; background: #02040a; color: var(--text); }
 
-			table td {
-				padding: 12px;
-				border-bottom: 1px solid #ddd;
-			}
+			.form-example button { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: white; padding: 0.7rem 1.25rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 700; }
 
-			table tr:hover {
-				background: #f5f5f5;
-			}
+			.form-example button:hover { opacity: 0.95; }
 
-			.tag-list {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 15px;
-				margin: 15px 0;
-			}
-
-			.tag-item {
-				background: #f5f5f5;
-				padding: 15px;
-				border-radius: 5px;
-				border-left: 4px solid #667eea;
-			}
-
-			.tag-item code {
-				color: #d63384;
-				font-weight: bold;
-			}
-
-			.tag-item p {
-				margin-top: 5px;
-				font-size: 0.9em;
-			}
-
-			ul,
-			ol {
-				margin-left: 20px;
-				margin-bottom: 15px;
-			}
-
-			li {
-				margin-bottom: 8px;
-			}
-
-			.tip {
-				background: #d4edda;
-				border: 1px solid #c3e6cb;
-				color: #155724;
-				padding: 15px;
-				border-radius: 5px;
-				margin: 15px 0;
-			}
-
-			.tip::before {
-				content: "💡 Tip: ";
-				font-weight: bold;
-			}
+			footer { background: #02040a; color: var(--muted-text); text-align: center; padding: 1.25rem; margin-top: 1.5rem; border-top: 1px solid var(--border); }
 
 			@media (max-width: 768px) {
-				.content {
-					flex-direction: column;
-				}
+				nav ul { flex-direction: column; }
 
-				.sidebar {
-					width: 100%;
-					max-height: none;
-					border-right: none;
-					border-bottom: 2px solid #ddd;
-				}
+				nav a { padding: 0.75rem 1rem; }
 
-				nav {
-					flex-direction: column;
-				}
+				header h1 { font-size: 1.8rem; }
 
-				nav button {
-					width: 100%;
-				}
+				main { padding: 1rem; }
 
-				header h1 {
-					font-size: 1.8em;
-				}
+				section { padding: 1rem; }
+
+				.tag-grid { grid-template-columns: 1fr; }
 			}
-
-			.output iframe {
-				width: 100%;
-				height: 300px;
-				border: 1px solid #ddd;
-				border-radius: 5px;
-			}
+			</style>
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<header>
-				<h1>📚 HTML Cheatsheet</h1>
+		<header>
+			<h1>📚 HTML Cheatsheet</h1>
+			<p>Learn HTML basics, view examples, and practice your skills</p>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="#intro">Introduction</a></li>
+				<li><a href="#structure">Structure</a></li>
+				<li><a href="#text">Text Tags</a></li>
+				<li><a href="#links">Links & Images</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#semantic">Semantic HTML</a></li>
+				<li><a href="#attributes">Attributes</a></li>
+				<li><a href="#practices">Practices</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<!-- Introduction Section -->
+			<section id="intro">
+				<h1>Introduction to HTML</h1>
+
+				<h2>What is HTML?</h2>
 				<p>
-					Learn HTML basics, practice with exercises, and experiment with code
+					HTML (HyperText Markup Language) is the standard markup language used
+					to create web pages. It provides the structure and content of
+					websites.
 				</p>
-			</header>
 
-			<nav>
-				<button class="active" onclick="showSection('intro')">
-					Introduction
-				</button>
-				<button onclick="showSection('structure')">Structure</button>
-				<button onclick="showSection('text')">Text Tags</button>
-				<button onclick="showSection('links-images')">Links & Images</button>
-				<button onclick="showSection('forms')">Forms</button>
-				<button onclick="showSection('semantic')">Semantic HTML</button>
-				<button onclick="showSection('attributes')">Attributes</button>
-				<button onclick="showSection('practice')">Exercises</button>
-			</nav>
-
-			<div class="content">
-				<div class="main-content">
-					<!-- Introduction Section -->
-					<div id="intro" class="section active">
-						<h2>Introduction to HTML</h2>
-						<div class="subsection">
-							<h3>What is HTML?</h3>
-							<p>
-								HTML (HyperText Markup Language) is the standard markup language
-								used to create web pages. It provides the structure and content
-								of websites.
-							</p>
-						</div>
-
-						<div class="subsection">
-							<h3>Basic HTML Document Structure</h3>
-							<div class="code-block">
-								<pre>
-&lt;!DOCTYPE html&gt;
+				<h2>Basic HTML Document Structure</h2>
+				<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Page Title&lt;/title&gt;
@@ -380,159 +161,132 @@
   &lt;body&gt;
     &lt;!-- Your content goes here --&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/html&gt;</code></pre>
 
-						<div class="subsection">
-							<h3>Key Concepts</h3>
-							<ul>
-								<li>
-									<strong>Elements:</strong> HTML elements are the building
-									blocks (tags with opening and closing)
-								</li>
-								<li>
-									<strong>Tags:</strong> Keywords surrounded by angle brackets
-									&lt;&gt;
-								</li>
-								<li>
-									<strong>Attributes:</strong> Provide additional information
-									about elements
-								</li>
-								<li>
-									<strong>Nested Tags:</strong> Tags within tags create
-									hierarchy
-								</li>
-							</ul>
-						</div>
+				<h2>Key Concepts</h2>
+				<ul>
+					<li>
+						<strong>Elements:</strong> HTML elements are the building blocks
+						(tags with opening and closing)
+					</li>
+					<li>
+						<strong>Tags:</strong> Keywords surrounded by angle brackets
+						&lt;&gt;
+					</li>
+					<li>
+						<strong>Attributes:</strong> Provide additional information about
+						elements
+					</li>
+					<li>
+						<strong>Nested Tags:</strong> Tags within tags create hierarchy
+					</li>
+				</ul>
 
-						<div class="tip">
-							Always start with &lt;!DOCTYPE html&gt; and close all opened tags
-							properly.
-						</div>
-					</div>
+				<div class="tip">
+					Always start with &lt;!DOCTYPE html&gt; and close all opened tags
+					properly.
+				</div>
+			</section>
 
-					<!-- Structure Section -->
-					<div id="structure" class="section">
-						<h2>HTML Document Structure</h2>
-						<div class="subsection">
-							<h3>Head Section</h3>
-							<p>
-								The &lt;head&gt; contains metadata and doesn't display on the
-								page:
-							</p>
-							<div class="code-block">
-								<pre>
-&lt;head&gt;
+			<!-- Structure Section -->
+			<section id="structure">
+				<h1>HTML Document Structure</h1>
+
+				<h2>Head Section</h2>
+				<p>
+					The &lt;head&gt; contains metadata and doesn't display on the page:
+				</p>
+				<pre><code>&lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width"&gt;
   &lt;title&gt;Page Title&lt;/title&gt;
   &lt;link rel="stylesheet" href="style.css"&gt;
   &lt;style&gt;/* CSS here */&lt;/style&gt;
   &lt;script src="script.js"&gt;&lt;/script&gt;
-&lt;/head&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/head&gt;</code></pre>
 
-						<div class="subsection">
-							<h3>Body Section</h3>
-							<p>The &lt;body&gt; contains all visible page content:</p>
-							<div class="code-block">
-								<pre>
-&lt;body&gt;
+				<h2>Body Section</h2>
+				<p>The &lt;body&gt; contains all visible page content:</p>
+				<pre><code>&lt;body&gt;
   &lt;h1&gt;Main Heading&lt;/h1&gt;
   &lt;p&gt;Paragraph of text&lt;/p&gt;
   &lt;!-- More content --&gt;
-&lt;/body&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/body&gt;</code></pre>
 
-						<div class="subsection">
-							<h3>Common Structure Elements</h3>
-							<table>
-								<tr>
-									<th>Tag</th>
-									<th>Purpose</th>
-									<th>Example</th>
-								</tr>
-								<tr>
-									<td>&lt;header&gt;</td>
-									<td>Header section</td>
-									<td>&lt;header&gt;Logo and Nav&lt;/header&gt;</td>
-								</tr>
-								<tr>
-									<td>&lt;nav&gt;</td>
-									<td>Navigation links</td>
-									<td>&lt;nav&gt;Menu items&lt;/nav&gt;</td>
-								</tr>
-								<tr>
-									<td>&lt;main&gt;</td>
-									<td>Main content</td>
-									<td>&lt;main&gt;Page content&lt;/main&gt;</td>
-								</tr>
-								<tr>
-									<td>&lt;footer&gt;</td>
-									<td>Footer section</td>
-									<td>&lt;footer&gt;Copyright info&lt;/footer&gt;</td>
-								</tr>
-							</table>
-						</div>
-					</div>
+				<h2>Common Structure Elements</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tag</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>&lt;header&gt;</code></td>
+							<td>Header section</td>
+							<td><code>&lt;header&gt;Logo and Nav&lt;/header&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&lt;nav&gt;</code></td>
+							<td>Navigation links</td>
+							<td><code>&lt;nav&gt;Menu items&lt;/nav&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&lt;main&gt;</code></td>
+							<td>Main content</td>
+							<td><code>&lt;main&gt;Page content&lt;/main&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>&lt;footer&gt;</code></td>
+							<td>Footer section</td>
+							<td><code>&lt;footer&gt;Copyright info&lt;/footer&gt;</code></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 
-					<!-- Text Tags Section -->
-					<div id="text" class="section">
-						<h2>Text & Formatting Tags</h2>
+			<!-- Text Tags Section -->
+			<section id="text">
+				<h1>Text & Formatting Tags</h1>
 
-						<div class="subsection">
-							<h3>Headings</h3>
-							<p>Use h1 to h6 for headings (h1 is largest):</p>
-							<div class="code-block">
-								<pre>
-&lt;h1&gt;Main Heading&lt;/h1&gt;
+				<h2>Headings</h2>
+				<p>Use h1 to h6 for headings (h1 is largest):</p>
+				<pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
 &lt;h2&gt;Subheading&lt;/h2&gt;
-&lt;h3&gt;Smaller Heading&lt;/h3&gt;</pre
-								>
-							</div>
-							<div class="example">
-								<div class="example-title">Preview:</div>
-								<h1 style="margin: 0">Main Heading</h1>
-								<h2 style="margin: 0">Subheading</h2>
-								<h3 style="margin: 0">Smaller Heading</h3>
-							</div>
-						</div>
+&lt;h3&gt;Smaller Heading&lt;/h3&gt;</code></pre>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<h1 style="margin: 0; font-size: 1.8rem">Main Heading</h1>
+					<h2 style="margin: 0; font-size: 1.3rem; margin-top: 0.5rem">
+						Subheading
+					</h2>
+					<h3 style="margin: 0; font-size: 1rem; margin-top: 0.5rem">
+						Smaller Heading
+					</h3>
+				</div>
 
-						<div class="subsection">
-							<h3>Paragraphs & Text</h3>
-							<div class="code-block">
-								<pre>
-&lt;p&gt;This is a paragraph&lt;/p&gt;
+				<h2>Paragraphs & Text</h2>
+				<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;
 &lt;br&gt; &lt;!-- Line break --&gt;
 &lt;hr&gt; &lt;!-- Horizontal line --&gt;
 &lt;strong&gt;Bold text&lt;/strong&gt; or &lt;b&gt;Bold&lt;/b&gt;
 &lt;em&gt;Italic text&lt;/em&gt; or &lt;i&gt;Italic&lt;/i&gt;
 &lt;u&gt;Underlined text&lt;/u&gt;
 &lt;del&gt;Deleted text&lt;/del&gt;
-&lt;mark&gt;Highlighted text&lt;/mark&gt;</pre
-								>
-							</div>
-							<div class="example">
-								<div class="example-title">Preview:</div>
-								<p style="margin: 0"><strong>Bold text</strong></p>
-								<p style="margin: 0"><em>Italic text</em></p>
-								<p style="margin: 0"><u>Underlined text</u></p>
-								<p style="margin: 0"><del>Deleted text</del></p>
-								<p style="margin: 0"><mark>Highlighted text</mark></p>
-							</div>
-						</div>
+&lt;mark&gt;Highlighted text&lt;/mark&gt;</code></pre>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<p style="margin: 0"><strong>Bold text</strong></p>
+					<p style="margin: 0.25rem 0"><em>Italic text</em></p>
+					<p style="margin: 0.25rem 0"><u>Underlined text</u></p>
+					<p style="margin: 0.25rem 0"><del>Deleted text</del></p>
+					<p style="margin: 0"><mark>Highlighted text</mark></p>
+				</div>
 
-						<div class="subsection">
-							<h3>Lists</h3>
-							<div class="code-block">
-								<pre>
-&lt;!-- Unordered List --&gt;
+				<h2>Lists</h2>
+				<pre><code>&lt;!-- Unordered List --&gt;
 &lt;ul&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
   &lt;li&gt;Item 2&lt;/li&gt;
@@ -542,31 +296,19 @@
 &lt;ol&gt;
   &lt;li&gt;First&lt;/li&gt;
   &lt;li&gt;Second&lt;/li&gt;
-&lt;/ol&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/ol&gt;</code></pre>
 
-						<div class="subsection">
-							<h3>Code & Preformatted Text</h3>
-							<div class="code-block">
-								<pre>
-&lt;code&gt;Inline code&lt;/code&gt;
-&lt;pre&gt;Preformatted text&lt;/pre&gt;</pre
-								>
-							</div>
-						</div>
-					</div>
+				<h2>Code & Preformatted Text</h2>
+				<pre><code>&lt;code&gt;Inline code&lt;/code&gt;
+&lt;pre&gt;Preformatted text&lt;/pre&gt;</code></pre>
+			</section>
 
-					<!-- Links & Images Section -->
-					<div id="links-images" class="section">
-						<h2>Links & Images</h2>
+			<!-- Links & Images Section -->
+			<section id="links">
+				<h1>Links & Images</h1>
 
-						<div class="subsection">
-							<h3>Links</h3>
-							<div class="code-block">
-								<pre>
-&lt;!-- External link --&gt;
+				<h2>Links</h2>
+				<pre><code>&lt;!-- External link --&gt;
 &lt;a href="https://example.com"&gt;Click here&lt;/a&gt;
 
 &lt;!-- Link with target --&gt;
@@ -576,16 +318,20 @@
 &lt;a href="about.html"&gt;About&lt;/a&gt;
 
 &lt;!-- Anchor link --&gt;
-&lt;a href="#section1"&gt;Jump to section&lt;/a&gt;</pre
-								>
-							</div>
-						</div>
+&lt;a href="#section1"&gt;Jump to section&lt;/a&gt;</code></pre>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<a href="#" style="color: #667eea; text-decoration: none"
+						>Click here</a
+					>
+					<br /><br />
+					<a href="#" style="color: #667eea; text-decoration: none"
+						>Open in new tab</a
+					>
+				</div>
 
-						<div class="subsection">
-							<h3>Images</h3>
-							<div class="code-block">
-								<pre>
-&lt;!-- Basic image --&gt;
+				<h2>Images</h2>
+				<pre><code>&lt;!-- Basic image --&gt;
 &lt;img src="image.jpg" alt="Description"&gt;
 
 &lt;!-- Image with attributes --&gt;
@@ -597,90 +343,91 @@
 &lt;!-- Image as link --&gt;
 &lt;a href="page.html"&gt;
   &lt;img src="thumb.jpg" alt="Thumbnail"&gt;
-&lt;/a&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/a&gt;</code></pre>
 
-						<div class="tip">
-							Always include an alt attribute for images. It describes the image
-							if it can't be loaded and helps with accessibility.
-						</div>
-					</div>
+				<div class="tip">
+					Always include an alt attribute for images. It describes the image if
+					it can't be loaded and helps with accessibility.
+				</div>
+			</section>
 
-					<!-- Forms Section -->
-					<div id="forms" class="section">
-						<h2>HTML Forms</h2>
+			<!-- Forms Section -->
+			<section id="forms">
+				<h1>HTML Forms</h1>
 
-						<div class="subsection">
-							<h3>Basic Form Structure</h3>
-							<div class="code-block">
-								<pre>
-&lt;form action="/submit" method="POST"&gt;
+				<h2>Basic Form Structure</h2>
+				<pre><code>&lt;form action="/submit" method="POST"&gt;
   &lt;input type="text" name="username" placeholder="Enter username"&gt;
   &lt;input type="password" name="password" placeholder="Enter password"&gt;
   &lt;button type="submit"&gt;Submit&lt;/button&gt;
-&lt;/form&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/form&gt;</code></pre>
 
-						<div class="subsection">
-							<h3>Input Types</h3>
-							<table>
-								<tr>
-									<th>Type</th>
-									<th>Purpose</th>
-									<th>Example</th>
-								</tr>
-								<tr>
-									<td>text</td>
-									<td>Single line text</td>
-									<td>&lt;input type="text"&gt;</td>
-								</tr>
-								<tr>
-									<td>email</td>
-									<td>Email input</td>
-									<td>&lt;input type="email"&gt;</td>
-								</tr>
-								<tr>
-									<td>password</td>
-									<td>Password (hidden)</td>
-									<td>&lt;input type="password"&gt;</td>
-								</tr>
-								<tr>
-									<td>number</td>
-									<td>Numeric input</td>
-									<td>&lt;input type="number"&gt;</td>
-								</tr>
-								<tr>
-									<td>date</td>
-									<td>Date picker</td>
-									<td>&lt;input type="date"&gt;</td>
-								</tr>
-								<tr>
-									<td>checkbox</td>
-									<td>Multiple selection</td>
-									<td>&lt;input type="checkbox"&gt;</td>
-								</tr>
-								<tr>
-									<td>radio</td>
-									<td>Single selection</td>
-									<td>&lt;input type="radio"&gt;</td>
-								</tr>
-								<tr>
-									<td>file</td>
-									<td>File upload</td>
-									<td>&lt;input type="file"&gt;</td>
-								</tr>
-							</table>
-						</div>
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<div class="form-example">
+						<form onsubmit="return false;">
+							<input type="text" placeholder="Enter username" />
+							<input type="password" placeholder="Enter password" />
+							<button type="submit">Submit</button>
+						</form>
+					</div>
+				</div>
 
-						<div class="subsection">
-							<h3>Form Elements</h3>
-							<div class="code-block">
-								<pre>
-&lt;label for="username"&gt;Username:&lt;/label&gt;
+				<h2>Input Types</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>text</td>
+							<td>Single line text</td>
+							<td><code>&lt;input type="text"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>email</td>
+							<td>Email input</td>
+							<td><code>&lt;input type="email"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>password</td>
+							<td>Password (hidden)</td>
+							<td><code>&lt;input type="password"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>number</td>
+							<td>Numeric input</td>
+							<td><code>&lt;input type="number"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>date</td>
+							<td>Date picker</td>
+							<td><code>&lt;input type="date"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>checkbox</td>
+							<td>Multiple selection</td>
+							<td><code>&lt;input type="checkbox"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>radio</td>
+							<td>Single selection</td>
+							<td><code>&lt;input type="radio"&gt;</code></td>
+						</tr>
+						<tr>
+							<td>file</td>
+							<td>File upload</td>
+							<td><code>&lt;input type="file"&gt;</code></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2>Form Elements</h2>
+				<pre><code>&lt;label for="username"&gt;Username:&lt;/label&gt;
 &lt;input id="username" type="text" name="username"&gt;
 
 &lt;textarea name="message" rows="4" cols="50"&gt;&lt;/textarea&gt;
@@ -689,68 +436,76 @@
   &lt;option&gt;Choose one&lt;/option&gt;
   &lt;option&gt;Option 1&lt;/option&gt;
   &lt;option&gt;Option 2&lt;/option&gt;
-&lt;/select&gt;</pre
-								>
-							</div>
-						</div>
+&lt;/select&gt;</code></pre>
+
+				<div class="example">
+					<div class="example-title">Preview:</div>
+					<div class="form-example">
+						<label for="msg">Message:</label>
+						<textarea
+							id="msg"
+							rows="4"
+							placeholder="Enter your message..."
+						></textarea>
+						<select>
+							<option>Choose one</option>
+							<option>Option 1</option>
+							<option>Option 2</option>
+						</select>
+						<button>Send</button>
 					</div>
+				</div>
+			</section>
 
-					<!-- Semantic HTML Section -->
-					<div id="semantic" class="section">
-						<h2>Semantic HTML</h2>
+			<!-- Semantic HTML Section -->
+			<section id="semantic">
+				<h1>Semantic HTML</h1>
 
-						<div class="subsection">
-							<h3>What is Semantic HTML?</h3>
-							<p>
-								Semantic HTML uses tags that clearly describe their meaning and
-								purpose to both browsers and developers. This improves
-								accessibility and SEO.
-							</p>
-						</div>
+				<h2>What is Semantic HTML?</h2>
+				<p>
+					Semantic HTML uses tags that clearly describe their meaning and
+					purpose to both browsers and developers. This improves accessibility
+					and SEO.
+				</p>
 
-						<div class="subsection">
-							<h3>Semantic Tags</h3>
-							<div class="tag-list">
-								<div class="tag-item">
-									<code>&lt;header&gt;</code>
-									<p>Introductory content or navigation</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;nav&gt;</code>
-									<p>Navigation links</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;main&gt;</code>
-									<p>Main content of the page</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;article&gt;</code>
-									<p>Self-contained content like blog posts</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;section&gt;</code>
-									<p>Thematic grouping of content</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;aside&gt;</code>
-									<p>Sidebar or related content</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;footer&gt;</code>
-									<p>Footer information</p>
-								</div>
-								<div class="tag-item">
-									<code>&lt;figure&gt;</code>
-									<p>Illustration, diagram, photo</p>
-								</div>
-							</div>
-						</div>
+				<h2>Semantic Tags</h2>
+				<div class="tag-grid">
+					<div class="tag-item">
+						<code>&lt;header&gt;</code>
+						<p>Introductory content or navigation</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;nav&gt;</code>
+						<p>Navigation links</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;main&gt;</code>
+						<p>Main content of the page</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;article&gt;</code>
+						<p>Self-contained content like blog posts</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;section&gt;</code>
+						<p>Thematic grouping of content</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;aside&gt;</code>
+						<p>Sidebar or related content</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;footer&gt;</code>
+						<p>Footer information</p>
+					</div>
+					<div class="tag-item">
+						<code>&lt;figure&gt;</code>
+						<p>Illustration, diagram, photo</p>
+					</div>
+				</div>
 
-						<div class="subsection">
-							<h3>Semantic Example</h3>
-							<div class="code-block">
-								<pre>
-&lt;article&gt;
+				<h2>Semantic Example</h2>
+				<pre><code>&lt;article&gt;
   &lt;h1&gt;Article Title&lt;/h1&gt;
   &lt;p&gt;Article content...&lt;/p&gt;
 &lt;/article&gt;
@@ -758,58 +513,54 @@
 &lt;figure&gt;
   &lt;img src="chart.png" alt="Sales chart"&gt;
   &lt;figcaption&gt;Figure 1: Sales by quarter&lt;/figcaption&gt;
-&lt;/figure&gt;</pre
-								>
-							</div>
-						</div>
-					</div>
+&lt;/figure&gt;</code></pre>
+			</section>
 
-					<!-- Attributes Section -->
-					<div id="attributes" class="section">
-						<h2>HTML Attributes</h2>
+			<!-- Attributes Section -->
+			<section id="attributes">
+				<h1>HTML Attributes</h1>
 
-						<div class="subsection">
-							<h3>Global Attributes</h3>
-							<p>These attributes can be used on any HTML element:</p>
-							<table>
-								<tr>
-									<th>Attribute</th>
-									<th>Purpose</th>
-									<th>Example</th>
-								</tr>
-								<tr>
-									<td>class</td>
-									<td>CSS class name(s)</td>
-									<td>&lt;p class="intro highlight"&gt;</td>
-								</tr>
-								<tr>
-									<td>id</td>
-									<td>Unique identifier</td>
-									<td>&lt;p id="main-text"&gt;</td>
-								</tr>
-								<tr>
-									<td>style</td>
-									<td>Inline CSS styles</td>
-									<td>&lt;p style="color: red;"&gt;</td>
-								</tr>
-								<tr>
-									<td>title</td>
-									<td>Tooltip text on hover</td>
-									<td>&lt;p title="Hover text"&gt;</td>
-								</tr>
-								<tr>
-									<td>data-*</td>
-									<td>Custom data attributes</td>
-									<td>&lt;p data-age="25"&gt;</td>
-								</tr>
-							</table>
-						</div>
+				<h2>Global Attributes</h2>
+				<p>These attributes can be used on any HTML element:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Attribute</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>class</code></td>
+							<td>CSS class name(s)</td>
+							<td><code>&lt;p class="intro highlight"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>id</code></td>
+							<td>Unique identifier</td>
+							<td><code>&lt;p id="main-text"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>style</code></td>
+							<td>Inline CSS styles</td>
+							<td><code>&lt;p style="color: red;"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>title</code></td>
+							<td>Tooltip text on hover</td>
+							<td><code>&lt;p title="Hover text"&gt;</code></td>
+						</tr>
+						<tr>
+							<td><code>data-*</code></td>
+							<td>Custom data attributes</td>
+							<td><code>&lt;p data-age="25"&gt;</code></td>
+						</tr>
+					</tbody>
+				</table>
 
-						<div class="subsection">
-							<h3>Common Attributes by Tag</h3>
-							<div class="code-block">
-								<pre>
-&lt;!-- For links --&gt;
+				<h2>Common Attributes by Tag</h2>
+				<pre><code>&lt;!-- For links --&gt;
 &lt;a href="url" target="_blank" title="tooltip"&gt;Link&lt;/a&gt;
 
 &lt;!-- For images --&gt;
@@ -819,191 +570,199 @@
 &lt;input type="text" name="field" required disabled placeholder="hint"&gt;
 
 &lt;!-- For forms --&gt;
-&lt;form action="url" method="POST" enctype="multipart/form-data"&gt;</pre
-								>
-							</div>
-						</div>
-					</div>
+&lt;form action="url" method="POST" enctype="multipart/form-data"&gt;</code></pre>
+			</section>
 
-					<!-- Practice Exercises Section -->
-					<div id="practice" class="section">
-						<h2>Practice Exercises</h2>
+			<!-- Practices Section -->
+			<section id="practices">
+				<h1>Practice Exercises</h1>
 
-						<div class="subsection">
-							<h3>Exercise 1: Create a Simple Webpage</h3>
-							<div class="experiment">
-								<div class="experiment-title">📝 Task: Write HTML Code</div>
-								<p>Create a simple webpage with:</p>
-								<ul>
-									<li>A title in the head</li>
-									<li>An h1 heading</li>
-									<li>A paragraph</li>
-									<li>A list with 3 items</li>
-								</ul>
-								<textarea
-									id="exercise1"
-									placeholder="Write your HTML code here..."
-								></textarea>
-								<button
-									class="btn-primary"
-									onclick="previewExercise('exercise1', 'output1')"
-								>
-									Preview
-								</button>
-								<div id="output1" class="output"></div>
-							</div>
-						</div>
+				<h2>Exercise 1: Create a Simple Webpage</h2>
+				<p><strong>Task:</strong> Create a simple webpage with:</p>
+				<ul>
+					<li>A title in the head</li>
+					<li>An h1 heading</li>
+					<li>A paragraph</li>
+					<li>A list with 3 items</li>
+				</ul>
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to My Webpage&lt;/h1&gt;
+  &lt;p&gt;This is a simple paragraph.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
-						<div class="subsection">
-							<h3>Exercise 2: Create a Contact Form</h3>
-							<div class="experiment">
-								<div class="experiment-title">📝 Task: Build a Form</div>
-								<p>Create a contact form with:</p>
-								<ul>
-									<li>Name input field</li>
-									<li>Email input field</li>
-									<li>Message textarea</li>
-									<li>Submit button</li>
-								</ul>
-								<textarea
-									id="exercise2"
-									placeholder="Write your HTML form code here..."
-								></textarea>
-								<button
-									class="btn-primary"
-									onclick="previewExercise('exercise2', 'output2')"
-								>
-									Preview
-								</button>
-								<div id="output2" class="output"></div>
-							</div>
-						</div>
+				<h2>Exercise 2: Create a Contact Form</h2>
+				<p><strong>Task:</strong> Build a contact form with:</p>
+				<ul>
+					<li>Name input field</li>
+					<li>Email input field</li>
+					<li>Message textarea</li>
+					<li>Submit button</li>
+				</ul>
+				<pre><code>&lt;form action="/contact" method="POST"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
 
-						<div class="subsection">
-							<h3>Exercise 3: Create a Blog Post</h3>
-							<div class="experiment">
-								<div class="experiment-title">📝 Task: Use Semantic HTML</div>
-								<p>Create a blog post structure using:</p>
-								<ul>
-									<li>&lt;header&gt; with title</li>
-									<li>&lt;article&gt; with content</li>
-									<li>&lt;footer&gt; with date</li>
-								</ul>
-								<textarea
-									id="exercise3"
-									placeholder="Write semantic HTML code here..."
-								></textarea>
-								<button
-									class="btn-primary"
-									onclick="previewExercise('exercise3', 'output3')"
-								>
-									Preview
-								</button>
-								<div id="output3" class="output"></div>
-							</div>
-						</div>
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
 
-						<div class="subsection">
-							<h3>Free Coding Area</h3>
-							<div class="experiment">
-								<div class="experiment-title">
-									🧪 Experiment: Write & Test HTML
-								</div>
-								<p>Use this area to experiment with any HTML code:</p>
-								<textarea
-									id="freeCode"
-									placeholder="Write your HTML code here and click Preview..."
-								></textarea>
-								<button
-									class="btn-primary"
-									onclick="previewExercise('freeCode', 'freeOutput')"
-								>
-									Preview
-								</button>
-								<div id="freeOutput" class="output"></div>
-							</div>
-						</div>
-					</div>
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+				<h2>Exercise 3: Create a Blog Post</h2>
+				<p>
+					<strong>Task:</strong> Use semantic HTML to structure a blog post:
+				</p>
+				<pre><code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Blog Post&lt;/h1&gt;
+    &lt;time datetime="2026-01-20"&gt;January 20, 2026&lt;/time&gt;
+  &lt;/header&gt;
+
+  &lt;p&gt;Introduction paragraph...&lt;/p&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Main Point&lt;/h2&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;Author: Your Name&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+
+				<h2>Exercise 4: Create a Portfolio Page Structure</h2>
+				<p>
+					<strong>Task:</strong> Structure a portfolio page with proper semantic
+					HTML:
+				</p>
+				<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Portfolio&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#portfolio"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id="about"&gt;
+      &lt;h2&gt;About Me&lt;/h2&gt;
+      &lt;p&gt;...&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="portfolio"&gt;
+      &lt;h2&gt;My Projects&lt;/h2&gt;
+      &lt;!-- Projects list --&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+				<h2>Additional Practice Ideas</h2>
+				<ul>
+					<li>Create a recipe page with ingredients and instructions</li>
+					<li>Build a product listing page with multiple products</li>
+					<li>Create a FAQ section with questions and answers</li>
+					<li>Build a navigation menu with dropdown items</li>
+					<li>Create a table comparing different products</li>
+					<li>Build a login and registration form</li>
+				</ul>
+
+				<div class="tip">
+					Try creating these projects without looking at the examples. When
+					you're done, compare your code with the examples to see if you missed
+					anything.
 				</div>
-			</div>
-		</div>
+			</section>
 
-		<script>
-			function showSection(sectionId) {
-				// Hide all sections
-				const sections = document.querySelectorAll(".section");
-				sections.forEach((section) => {
-					section.classList.remove("active");
-				});
+			<!-- Quick Reference -->
+			<section>
+				<h1>Quick Reference</h1>
 
-				// Show selected section
-				const selectedSection = document.getElementById(sectionId);
-				if (selectedSection) {
-					selectedSection.classList.add("active");
-				}
+				<h2>Common HTML Tags</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tag</th>
+							<th>Description</th>
+							<th>Self-Closing</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>&lt;div&gt;</code></td>
+							<td>Generic container</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td><code>&lt;span&gt;</code></td>
+							<td>Inline container</td>
+							<td>No</td>
+						</tr>
+						<tr>
+							<td><code>&lt;br&gt;</code></td>
+							<td>Line break</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;hr&gt;</code></td>
+							<td>Horizontal line</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;img&gt;</code></td>
+							<td>Image</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;input&gt;</code></td>
+							<td>Input field</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;meta&gt;</code></td>
+							<td>Metadata</td>
+							<td>Yes</td>
+						</tr>
+						<tr>
+							<td><code>&lt;link&gt;</code></td>
+							<td>Link resource</td>
+							<td>Yes</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
 
-				// Update active button
-				const buttons = document.querySelectorAll("nav button");
-				buttons.forEach((btn) => {
-					btn.classList.remove("active");
-				});
-				event.target.classList.add("active");
-
-				// Scroll to top
-				window.scrollTo(0, 0);
-			}
-
-			function previewExercise(textareaId, outputId) {
-				const textarea = document.getElementById(textareaId);
-				const output = document.getElementById(outputId);
-				const code = textarea.value.trim();
-
-				if (!code) {
-					output.innerHTML =
-						'<p style="color: red;">Please write some HTML code first!</p>';
-					return;
-				}
-
-				// Create an iframe to safely display user HTML
-				output.innerHTML = "";
-				const iframe = document.createElement("iframe");
-				iframe.style.width = "100%";
-				iframe.style.height = "400px";
-				iframe.style.border = "1px solid #ddd";
-				iframe.style.borderRadius = "5px";
-				output.appendChild(iframe);
-
-				// Write the code to iframe
-				const doc = iframe.contentDocument || iframe.contentWindow.document;
-				doc.open();
-				doc.write(`
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <meta charset="UTF-8">
-                    <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; }
-                        * { box-sizing: border-box; }
-                    </style>
-                </head>
-                <body>
-                    ${code}
-                </body>
-                </html>
-            `);
-				doc.close();
-			}
-
-			// Keyboard shortcut: Ctrl+Shift+P to preview (in practice section)
-			document.addEventListener("keydown", function (e) {
-				if (e.ctrlKey && e.shiftKey && e.code === "KeyP") {
-					e.preventDefault();
-					const activeSection = document.querySelector(".section.active");
-					if (activeSection && activeSection.id === "practice") {
-						alert("Use the Preview buttons to see your code in action!");
-					}
-				}
-			});
-		</script>
+		<footer>
+			<p>&copy; 2026 HTML Cheatsheet - A Learning Resource</p>
+			<p>Created for HTML beginners and practitioners</p>
+		</footer>
 	</body>
 </html>

@@ -84,8 +84,10 @@ if (!empty($_SESSION['user_id'])) {
                 <strong>Member since:</strong> <?php echo htmlspecialchars($user['registration_date']); ?><br>
             </div>
             <div class="actions">
+                <a class="btn" href="01_profile_management/index.php">View Profile</a>
+                <a class="btn" href="02_todo_app/index.php">My Todos</a>
+                <a class="btn" href="03_blog_system/index.php">Blog</a>
                 <a class="btn" href="logout.php">Log out</a>
-                <a class="btn" href="register.php">Create another account</a>
             </div>
         <?php else: ?>
             <h1>Welcome to Beginner PHP</h1>

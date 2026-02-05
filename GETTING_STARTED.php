@@ -407,15 +407,16 @@
 
     <div class="container">
         <!-- Navigation -->
-        <div style="background:white;border-radius:10px;padding:12px 20px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;gap:15px;flex-wrap:wrap;">
+        <div
+            style="background:white;border-radius:10px;padding:12px 20px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;gap:15px;flex-wrap:wrap;">
             <a href="index.php" style="color:#4facfe;text-decoration:none;font-weight:500;">← Home</a>
             <span style="color:#ddd;">|</span>
             <a href="START_HERE.php" style="color:#4facfe;text-decoration:none;font-weight:500;">Dashboard</a>
             <a href="LEARNING_PATH.php" style="color:#4facfe;text-decoration:none;font-weight:500;">Learning Path</a>
-            <a href="README_ADVANCED.php" style="color:#4facfe;text-decoration:none;font-weight:500;">Study Strategies</a>
+            <a href="README_ADVANCED.php" style="color:#4facfe;text-decoration:none;font-weight:500;">Study
+                Strategies</a>
             <a href="MASTERY_GUIDE.php" style="color:#4facfe;text-decoration:none;font-weight:500;">Mastery Guide</a>
             <a href="modules/index.php" style="color:#4facfe;text-decoration:none;font-weight:500;">All Modules</a>
-            <a href="projects/index.php" style="color:#4facfe;text-decoration:none;font-weight:500;">Projects</a>
         </div>
         <!-- Header -->
         <div class="header">
@@ -431,7 +432,8 @@
         <div class="content-section">
             <h2>✅ Everything Already Set? Great!</h2>
             <p style="color: #666; margin-bottom: 20px;">
-                You've already completed modules 1-12. Your environment is ready. Let's make sure you're positioned for success:
+                You've already completed modules 1-12. Your environment is ready. Let's make sure you're positioned for
+                success:
             </p>
 
             <div class="checklist">
@@ -463,467 +465,466 @@
                         <span class="desc">Tracking progress with version control</span>
                     </label>
                 </div>
-                        <strong>Initialize Git repository</strong>
-                        <span class="desc">Track your progress: git init, then git add ., git commit</span>
-                    </label>
+                <strong>Initialize Git repository</strong>
+                <span class="desc">Track your progress: git init, then git add ., git commit</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="setup5">
+                <label for="setup5">
+                    <strong>Create GitHub account</strong>
+                    <span class="desc">Push your code to GitHub. Show your work to the world!</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="setup6">
+                <label for="setup6">
+                    <strong>Set daily study time</strong>
+                    <span class="desc">Block 2 hours. Morning is best. Protect this time.</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Investment -->
+    <div class="content-section">
+        <h2>⏱️ Time Investment Calculator</h2>
+        <p style="color: #666; margin-bottom: 20px;">
+            Let's calculate your learning timeline based on your daily commitment:
+        </p>
+
+        <div class="calculator">
+            <div class="calculator-input">
+                <div class="input-group">
+                    <label for="hoursDaily">Hours per day:</label>
+                    <input type="number" id="hoursDaily" value="2" min="1" max="8">
                 </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="setup5">
-                    <label for="setup5">
-                        <strong>Create GitHub account</strong>
-                        <span class="desc">Push your code to GitHub. Show your work to the world!</span>
-                    </label>
+                <div class="input-group">
+                    <label for="daysPerWeek">Days per week:</label>
+                    <input type="number" id="daysPerWeek" value="5" min="1" max="7">
                 </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="setup6">
-                    <label for="setup6">
-                        <strong>Set daily study time</strong>
-                        <span class="desc">Block 2 hours. Morning is best. Protect this time.</span>
-                    </label>
+            </div>
+
+            <button class="cta-button" onclick="calculateTimeline()">Calculate Timeline</button>
+
+            <div id="result" style="display: none;">
+                <div class="result">
+                    <div class="number" id="resultText"></div>
+                    <p id="resultDetail"></p>
                 </div>
             </div>
         </div>
 
-        <!-- Time Investment -->
-        <div class="content-section">
-            <h2>⏱️ Time Investment Calculator</h2>
-            <p style="color: #666; margin-bottom: 20px;">
-                Let's calculate your learning timeline based on your daily commitment:
-            </p>
-
-            <div class="calculator">
-                <div class="calculator-input">
-                    <div class="input-group">
-                        <label for="hoursDaily">Hours per day:</label>
-                        <input type="number" id="hoursDaily" value="2" min="1" max="8">
-                    </div>
-                    <div class="input-group">
-                        <label for="daysPerWeek">Days per week:</label>
-                        <input type="number" id="daysPerWeek" value="5" min="1" max="7">
-                    </div>
-                </div>
-
-                <button class="cta-button" onclick="calculateTimeline()">Calculate Timeline</button>
-
-                <div id="result" style="display: none;">
-                    <div class="result">
-                        <div class="number" id="resultText"></div>
-                        <p id="resultDetail"></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-box">
-                <strong>📌 Recommendation:</strong> 2 hours daily, 5-6 days per week gives you the best balance of
-                intensity and consistency. This puts you at Expert level in 4-5 months.
-            </div>
+        <div class="info-box">
+            <strong>📌 Recommendation:</strong> 2 hours daily, 5-6 days per week gives you the best balance of
+            intensity and consistency. This puts you at Expert level in 4-5 months.
         </div>
+    </div>
 
-        <!-- This Week Action Plan -->
-        <div class="content-section">
-            <h2>📅 Your First Week - Action by Action</h2>
+    <!-- This Week Action Plan -->
+    <div class="content-section">
+        <h2>📅 Your First Week - Action by Action</h2>
 
-            <div class="action-grid">
-                <div class="action-card">
-                    <h3>🔧 Day 1: Setup</h3>
-                    <div class="time">2 hours</div>
-                    <ul>
-                        <li>Install XAMPP</li>
-                        <li>Set up VS Code</li>
-                        <li>Create workspace</li>
-                        <li>Test local server</li>
-                    </ul>
-                </div>
-
-                <div class="action-card">
-                    <h3>📖 Day 2: Review Basics</h3>
-                    <div class="time">2 hours</div>
-                    <ul>
-                        <li>Review Modules 1-5</li>
-                        <li>Re-read core concepts</li>
-                        <li>Type out examples</li>
-                        <li>Take notes</li>
-                    </ul>
-                </div>
-
-                <div class="action-card">
-                    <h3>💻 Day 3: Refresh Skills</h3>
-                    <div class="time">2 hours</div>
-                    <ul>
-                        <li>Review Modules 6-12</li>
-                        <li>Do practice exercises</li>
-                        <li>Build small scripts</li>
-                        <li>Push to GitHub</li>
-                    </ul>
-                </div>
-
-                <div class="action-card">
-                    <h3>🗄️ Day 4: Start Module 13</h3>
-                    <div class="time">2 hours</div>
-                    <ul>
-                        <li>Read lesson carefully</li>
-                        <li>Type examples</li>
-                        <li>Create test database</li>
-                        <li>Run simple queries</li>
-                    </ul>
-                </div>
-
-                <div class="action-card">
-                    <h3>🎯 Day 5: Deep Dive Module 13</h3>
-                    <div class="time">2 hours</div>
-                    <ul>
-                        <li>Complete exercises</li>
-                        <li>Debug errors</li>
-                        <li>Understand concepts</li>
-                        <li>Make notes</li>
-                    </ul>
-                </div>
-
-                <div class="action-card">
-                    <h3>📝 Day 6: Consolidate</h3>
-                    <div class="time">2 hours</div>
-                    <ul>
-                        <li>Review Module 13</li>
-                        <li>Practice more</li>
-                        <li>Commit to GitHub</li>
-                        <li>Rest & reflect</li>
-                    </ul>
-                </div>
-
-                <div class="action-card">
-                    <h3>🔄 Day 7: Review & Plan</h3>
-                    <div class="time">1 hour</div>
-                    <ul>
-                        <li>Review the week</li>
-                        <li>What stuck?</li>
-                        <li>What needs review?</li>
-                        <li>Plan next week</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Learning Timeline -->
-        <div class="content-section">
-            <h2>📈 4-6 Month Learning Timeline</h2>
-
-            <div class="timeline-setup">
-                <div class="timeline-item">
-                    <h4>📍 Month 1: Intermediate Foundation</h4>
-                    <div class="duration">Weeks 1-4 | 40-56 hours | Modules 13-18</div>
-                    <div class="content">
-                        <p><strong>Goal:</strong> Master databases, SQL, security basics, and MVC architecture</p>
-                        <p><strong>Modules:</strong> Database Basics, SQL Queries, MySQL Functions, Error Handling,
-                            Security, MVC</p>
-                        <p><strong>Project:</strong> Build Todo Application with authentication</p>
-                        <p><strong>Milestone:</strong> You can build a complete CRUD app with user authentication!</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>📍 Month 2: Advanced Skills</h4>
-                    <div class="duration">Weeks 5-8 | 56-75 hours | Modules 19-21</div>
-                    <div class="content">
-                        <p><strong>Goal:</strong> Learn design patterns, APIs, testing, and professional development
-                            practices</p>
-                        <p><strong>Modules:</strong> Design Patterns, RESTful APIs, Testing & Debugging</p>
-                        <p><strong>Project:</strong> Build Blog System (intermediate-advanced)</p>
-                        <p><strong>Milestone:</strong> You understand professional PHP architecture!</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>📍 Month 3: Advanced Level</h4>
-                    <div class="duration">Weeks 9-12 | 42-56 hours | Modules 22-24</div>
-                    <div class="content">
-                        <p><strong>Goal:</strong> Master authentication, performance, and deployment</p>
-                        <p><strong>Modules:</strong> Authentication & Authorization, Performance Optimization,
-                            Deployment</p>
-                        <p><strong>Project:</strong> Build E-Commerce Platform (advanced)</p>
-                        <p><strong>Milestone:</strong> You've reached Advanced-level developer status!</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>📍 Month 4-5: Expert Level</h4>
-                    <div class="duration">Weeks 13-20 | 84-120 hours | Modules 25-30</div>
-                    <div class="content">
-                        <p><strong>Goal:</strong> Master expert-level concepts: OOP, Dependency Injection,
-                            Microservices, Docker, DevOps, System Design</p>
-                        <p><strong>Modules:</strong> Advanced OOP, DI, Microservices, Containerization, DevOps, System
-                            Design</p>
-                        <p><strong>Project:</strong> Build Social Network with advanced features (expert)</p>
-                        <p><strong>Milestone:</strong> You've reached Expert-level developer status!</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>📍 Month 6: Specialization</h4>
-                    <div class="duration">Weeks 21-26 | 42-70 hours | Deep Specialization</div>
-                    <div class="content">
-                        <p><strong>Goal:</strong> Deep-dive into your chosen specialization</p>
-                        <p><strong>Options:</strong> API/Backend Architecture, DevOps, Database Engineering, Security,
-                            Framework Mastery, Technical Leadership</p>
-                        <p><strong>Project:</strong> Build ambitious project in your specialization</p>
-                        <p><strong>Milestone:</strong> You're ready for senior-level roles!</p>
-                    </div>
-                </div>
+        <div class="action-grid">
+            <div class="action-card">
+                <h3>🔧 Day 1: Setup</h3>
+                <div class="time">2 hours</div>
+                <ul>
+                    <li>Install XAMPP</li>
+                    <li>Set up VS Code</li>
+                    <li>Create workspace</li>
+                    <li>Test local server</li>
+                </ul>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat">
-                    <div class="value">30</div>
-                    <div class="label">Modules Total</div>
-                </div>
-                <div class="stat">
-                    <div class="value">4-6</div>
-                    <div class="label">Months to Expert</div>
-                </div>
-                <div class="stat">
-                    <div class="value">250+</div>
-                    <div class="label">Total Hours</div>
-                </div>
-                <div class="stat">
-                    <div class="value">4</div>
-                    <div class="label">Real Projects</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Daily Routine -->
-        <div class="content-section">
-            <h2>⏰ Your Daily Routine (2 Hours)</h2>
-
-            <div class="timeline-setup">
-                <div class="timeline-item">
-                    <h4>Minutes 0-5: Warm Up</h4>
-                    <div class="content">
-                        <p>Review yesterday's notes. Identify today's goal. What ONE concept will you master?</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>Minutes 5-50: Read & Understand (45 min)</h4>
-                    <div class="content">
-                        <p>
-                            <strong>Step 1:</strong> Read the lesson carefully (15 min)<br>
-                            <strong>Step 2:</strong> Type out all examples (20 min)<br>
-                            <strong>Step 3:</strong> Run them. Play with them. Break them intentionally (10 min)
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>Minutes 50-110: Practice & Code (60 min)</h4>
-                    <div class="content">
-                        <p>
-                            <strong>Step 1:</strong> Complete the exercises without looking at solutions (30 min)<br>
-                            <strong>Step 2:</strong> Debug your own errors (15 min)<br>
-                            <strong>Step 3:</strong> Compare with solutions and understand differences (15 min)
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <h4>Minutes 110-120: Reflect & Document (10 min)</h4>
-                    <div class="content">
-                        <p>
-                            Write 3-5 key takeaways.<br>
-                            What was hard? Why?<br>
-                            Commit your work to GitHub.<br>
-                            Mark progress.
-                        </p>
-                    </div>
-                </div>
+            <div class="action-card">
+                <h3>📖 Day 2: Review Basics</h3>
+                <div class="time">2 hours</div>
+                <ul>
+                    <li>Review Modules 1-5</li>
+                    <li>Re-read core concepts</li>
+                    <li>Type out examples</li>
+                    <li>Take notes</li>
+                </ul>
             </div>
 
-            <div class="info-box">
-                <strong>💡 Pro Tips:</strong>
-                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
-                    <li>No distractions. Phone away. Email closed.</li>
-                    <li>Dark mode in VS Code. Comfortable chair. Good lighting.</li>
-                    <li>Breaks every 25 min if you prefer Pomodoro technique.</li>
-                    <li>Same time every day builds the habit.</li>
-                    <li>If stuck for 15 minutes, take a break. Fresh eyes help.</li>
+            <div class="action-card">
+                <h3>💻 Day 3: Refresh Skills</h3>
+                <div class="time">2 hours</div>
+                <ul>
+                    <li>Review Modules 6-12</li>
+                    <li>Do practice exercises</li>
+                    <li>Build small scripts</li>
+                    <li>Push to GitHub</li>
+                </ul>
+            </div>
+
+            <div class="action-card">
+                <h3>🗄️ Day 4: Start Module 13</h3>
+                <div class="time">2 hours</div>
+                <ul>
+                    <li>Read lesson carefully</li>
+                    <li>Type examples</li>
+                    <li>Create test database</li>
+                    <li>Run simple queries</li>
+                </ul>
+            </div>
+
+            <div class="action-card">
+                <h3>🎯 Day 5: Deep Dive Module 13</h3>
+                <div class="time">2 hours</div>
+                <ul>
+                    <li>Complete exercises</li>
+                    <li>Debug errors</li>
+                    <li>Understand concepts</li>
+                    <li>Make notes</li>
+                </ul>
+            </div>
+
+            <div class="action-card">
+                <h3>📝 Day 6: Consolidate</h3>
+                <div class="time">2 hours</div>
+                <ul>
+                    <li>Review Module 13</li>
+                    <li>Practice more</li>
+                    <li>Commit to GitHub</li>
+                    <li>Rest & reflect</li>
+                </ul>
+            </div>
+
+            <div class="action-card">
+                <h3>🔄 Day 7: Review & Plan</h3>
+                <div class="time">1 hour</div>
+                <ul>
+                    <li>Review the week</li>
+                    <li>What stuck?</li>
+                    <li>What needs review?</li>
+                    <li>Plan next week</li>
                 </ul>
             </div>
         </div>
+    </div>
 
-        <!-- Week by Week Milestones -->
-        <div class="content-section">
-            <h2>🎯 Week-by-Week Milestones (First 4 Weeks)</h2>
+    <!-- Learning Timeline -->
+    <div class="content-section">
+        <h2>📈 4-6 Month Learning Timeline</h2>
 
-            <div class="checklist">
-                <div class="checklist-item">
-                    <input type="checkbox" id="week1">
-                    <label for="week1">
-                        <strong>Week 1: Environment & Basics Review</strong>
-                        <span class="desc">Setup XAMPP, VS Code. Review Modules 1-7. Feeling refreshed.</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="week2">
-                    <label for="week2">
-                        <strong>Week 2: OOP & Advanced Basics</strong>
-                        <span class="desc">Complete Modules 8-12. Feel comfortable with OOP. Push to GitHub
-                            weekly.</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="week3">
-                    <label for="week3">
-                        <strong>Week 3: Database Master</strong>
-                        <span class="desc">Complete Modules 13-14. Write complex SQL queries. Create databases from
-                            scratch.</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="week4">
-                    <label for="week4">
-                        <strong>Week 4: Security & Architecture</strong>
-                        <span class="desc">Complete Modules 15-18. Understand MVC. Implement secure authentication.
-                            Ready to build Project 1!</span>
-                    </label>
+        <div class="timeline-setup">
+            <div class="timeline-item">
+                <h4>📍 Month 1: Intermediate Foundation</h4>
+                <div class="duration">Weeks 1-4 | 40-56 hours | Modules 13-18</div>
+                <div class="content">
+                    <p><strong>Goal:</strong> Master databases, SQL, security basics, and MVC architecture</p>
+                    <p><strong>Modules:</strong> Database Basics, SQL Queries, MySQL Functions, Error Handling,
+                        Security, MVC</p>
+                    <p><strong>Project:</strong> Build Todo Application with authentication</p>
+                    <p><strong>Milestone:</strong> You can build a complete CRUD app with user authentication!</p>
                 </div>
             </div>
 
-            <div class="info-box">
-                <strong>✨ Week 4 Achievement:</strong> You'll have completed your first month and mastered
-                Intermediate-level PHP development! You can build a full CRUD application with user authentication.
-                That's significant progress!
+            <div class="timeline-item">
+                <h4>📍 Month 2: Advanced Skills</h4>
+                <div class="duration">Weeks 5-8 | 56-75 hours | Modules 19-21</div>
+                <div class="content">
+                    <p><strong>Goal:</strong> Learn design patterns, APIs, testing, and professional development
+                        practices</p>
+                    <p><strong>Modules:</strong> Design Patterns, RESTful APIs, Testing & Debugging</p>
+                    <p><strong>Project:</strong> Build Blog System (intermediate-advanced)</p>
+                    <p><strong>Milestone:</strong> You understand professional PHP architecture!</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Success Formula -->
-        <div class="content-section"
-            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
-            <h2 style="color: white; border-bottom-color: white;">🔥 Your Success Formula</h2>
-
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">1️⃣</div>
-                    <h4 style="color: white; margin-bottom: 10px;">Consistency</h4>
-                    <p>2 hours daily beats 14 hours weekly. Build the habit.</p>
+            <div class="timeline-item">
+                <h4>📍 Month 3: Advanced Level</h4>
+                <div class="duration">Weeks 9-12 | 42-56 hours | Modules 22-24</div>
+                <div class="content">
+                    <p><strong>Goal:</strong> Master authentication, performance, and deployment</p>
+                    <p><strong>Modules:</strong> Authentication & Authorization, Performance Optimization,
+                        Deployment</p>
+                    <p><strong>Project:</strong> Build E-Commerce Platform (advanced)</p>
+                    <p><strong>Milestone:</strong> You've reached Advanced-level developer status!</p>
                 </div>
+            </div>
 
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">2️⃣</div>
-                    <h4 style="color: white; margin-bottom: 10px;">Building</h4>
-                    <p>Don't just watch. CODE. The struggle is where learning happens.</p>
+            <div class="timeline-item">
+                <h4>📍 Month 4-5: Expert Level</h4>
+                <div class="duration">Weeks 13-20 | 84-120 hours | Modules 25-30</div>
+                <div class="content">
+                    <p><strong>Goal:</strong> Master expert-level concepts: OOP, Dependency Injection,
+                        Microservices, Docker, DevOps, System Design</p>
+                    <p><strong>Modules:</strong> Advanced OOP, DI, Microservices, Containerization, DevOps, System
+                        Design</p>
+                    <p><strong>Project:</strong> Build Social Network with advanced features (expert)</p>
+                    <p><strong>Milestone:</strong> You've reached Expert-level developer status!</p>
                 </div>
+            </div>
 
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">3️⃣</div>
-                    <h4 style="color: white; margin-bottom: 10px;">Debugging</h4>
-                    <p>Errors teach you more than working code. Embrace the struggle.</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">4️⃣</div>
-                    <h4 style="color: white; margin-bottom: 10px;">Projects</h4>
-                    <p>Projects consolidate everything. Build 4 real applications.</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">5️⃣</div>
-                    <h4 style="color: white; margin-bottom: 10px;">Review</h4>
-                    <p>Revisit old code. Refactor. Understand your own growth.</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">6️⃣</div>
-                    <h4 style="color: white; margin-bottom: 10px;">Sharing</h4>
-                    <p>Teach others. Write about what you learn. Solidify understanding.</p>
+            <div class="timeline-item">
+                <h4>📍 Month 6: Specialization</h4>
+                <div class="duration">Weeks 21-26 | 42-70 hours | Deep Specialization</div>
+                <div class="content">
+                    <p><strong>Goal:</strong> Deep-dive into your chosen specialization</p>
+                    <p><strong>Options:</strong> API/Backend Architecture, DevOps, Database Engineering, Security,
+                        Framework Mastery, Technical Leadership</p>
+                    <p><strong>Project:</strong> Build ambitious project in your specialization</p>
+                    <p><strong>Milestone:</strong> You're ready for senior-level roles!</p>
                 </div>
             </div>
         </div>
 
-        <!-- Final Checklist Before Starting -->
-        <div class="content-section">
-            <h2>✅ Final Checklist - Ready to Start?</h2>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="value">30</div>
+                <div class="label">Modules Total</div>
+            </div>
+            <div class="stat">
+                <div class="value">4-6</div>
+                <div class="label">Months to Expert</div>
+            </div>
+            <div class="stat">
+                <div class="value">250+</div>
+                <div class="label">Total Hours</div>
+            </div>
+            <div class="stat">
+                <div class="value">4</div>
+                <div class="label">Real Applications</div>
+            </div>
+        </div>
+    </div>
 
-            <div class="checklist">
-                <div class="checklist-item">
-                    <input type="checkbox" id="final1">
-                    <label for="final1">
-                        <strong>XAMPP installed and running</strong>
-                        <span class="desc">Can access http://localhost in browser</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="final2">
-                    <label for="final2">
-                        <strong>VS Code configured with PHP extensions</strong>
-                        <span class="desc">PHP Intelephense, Code Runner, GitLens installed</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="final3">
-                    <label for="final3">
-                        <strong>Workspace folder created</strong>
-                        <span class="desc">d:\xampp\htdocs\php_from_zero (your learning home)</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="final4">
-                    <label for="final4">
-                        <strong>Git initialized and first commit made</strong>
-                        <span class="desc">git init, .gitignore created, first commit done</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="final5">
-                    <label for="final5">
-                        <strong>GitHub repository created</strong>
-                        <span class="desc">Public repo, README.md pushed, ready to share</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="final6">
-                    <label for="final6">
-                        <strong>Daily study time blocked in calendar</strong>
-                        <span class="desc">Same time every day. Protected. No exceptions.</span>
-                    </label>
-                </div>
-                <div class="checklist-item">
-                    <input type="checkbox" id="final7">
-                    <label for="final7">
-                        <strong>Motivation set</strong>
-                        <span class="desc">Why are you learning PHP? Keep that vision in front of you.</span>
-                    </label>
+    <!-- Daily Routine -->
+    <div class="content-section">
+        <h2>⏰ Your Daily Routine (2 Hours)</h2>
+
+        <div class="timeline-setup">
+            <div class="timeline-item">
+                <h4>Minutes 0-5: Warm Up</h4>
+                <div class="content">
+                    <p>Review yesterday's notes. Identify today's goal. What ONE concept will you master?</p>
                 </div>
             </div>
 
-            <div class="info-box" style="margin-top: 30px;">
-                <strong>🎯 You're ready! Start with Module 13: Database Basics today.</strong> Don't wait for tomorrow.
-                Don't wait for Monday. Now is the time. You've got everything you need. Let's go! 🚀
+            <div class="timeline-item">
+                <h4>Minutes 5-50: Read & Understand (45 min)</h4>
+                <div class="content">
+                    <p>
+                        <strong>Step 1:</strong> Read the lesson carefully (15 min)<br>
+                        <strong>Step 2:</strong> Type out all examples (20 min)<br>
+                        <strong>Step 3:</strong> Run them. Play with them. Break them intentionally (10 min)
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Minutes 50-110: Practice & Code (60 min)</h4>
+                <div class="content">
+                    <p>
+                        <strong>Step 1:</strong> Complete the exercises without looking at solutions (30 min)<br>
+                        <strong>Step 2:</strong> Debug your own errors (15 min)<br>
+                        <strong>Step 3:</strong> Compare with solutions and understand differences (15 min)
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Minutes 110-120: Reflect & Document (10 min)</h4>
+                <div class="content">
+                    <p>
+                        Write 3-5 key takeaways.<br>
+                        What was hard? Why?<br>
+                        Commit your work to GitHub.<br>
+                        Mark progress.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="content-section"
-            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; text-align: center;">
-            <h2 style="color: white; border-bottom-color: white;">Ready to Transform?</h2>
-            <p style="font-size: 1.1em; color: white; margin-bottom: 20px;">
-                You're 4-6 months away from becoming an expert PHP developer. Every great developer started exactly
-                where you are.
-            </p>
-            <a href="../modules/13_database_basics/lesson.php" class="cta-button">Start Module 13 Now →</a>
+        <div class="info-box">
+            <strong>💡 Pro Tips:</strong>
+            <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                <li>No distractions. Phone away. Email closed.</li>
+                <li>Dark mode in VS Code. Comfortable chair. Good lighting.</li>
+                <li>Breaks every 25 min if you prefer Pomodoro technique.</li>
+                <li>Same time every day builds the habit.</li>
+                <li>If stuck for 15 minutes, take a break. Fresh eyes help.</li>
+            </ul>
         </div>
+    </div>
 
-        <!-- Navigation Footer -->
-        <div class="footer">
-            <p><strong>Your learning journey starts now</strong></p>
-            <p style="color: #999; margin-bottom: 20px;">One line of code at a time. One concept at a time. One day at a
-                time.</p>
-            <div class="breadcrumb" style="justify-content: center;">
-                <a href="LEARNING_PATH.php">← Learning Path</a>
-                <a href="README_ADVANCED.php">Strategies</a>
-                <a href="MASTERY_GUIDE.php">Mastery</a>
-                <a href="START_HERE.php">Dashboard</a>
+    <!-- Week by Week Milestones -->
+    <div class="content-section">
+        <h2>🎯 Week-by-Week Milestones (First 4 Weeks)</h2>
+
+        <div class="checklist">
+            <div class="checklist-item">
+                <input type="checkbox" id="week1">
+                <label for="week1">
+                    <strong>Week 1: Environment & Basics Review</strong>
+                    <span class="desc">Setup XAMPP, VS Code. Review Modules 1-7. Feeling refreshed.</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="week2">
+                <label for="week2">
+                    <strong>Week 2: OOP & Advanced Basics</strong>
+                    <span class="desc">Complete Modules 8-12. Feel comfortable with OOP. Push to GitHub
+                        weekly.</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="week3">
+                <label for="week3">
+                    <strong>Week 3: Database Master</strong>
+                    <span class="desc">Complete Modules 13-14. Write complex SQL queries. Create databases from
+                        scratch.</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="week4">
+                <label for="week4">
+                    <strong>Week 4: Security & Architecture</strong>
+                    <span class="desc">Complete Modules 15-18. Understand MVC. Implement secure authentication.
+                        Ready to build Project 1!</span>
+                </label>
             </div>
         </div>
+
+        <div class="info-box">
+            <strong>✨ Week 4 Achievement:</strong> You'll have completed your first month and mastered
+            Intermediate-level PHP development! You can build a full CRUD application with user authentication.
+            That's significant progress!
+        </div>
+    </div>
+
+    <!-- Success Formula -->
+    <div class="content-section" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
+        <h2 style="color: white; border-bottom-color: white;">🔥 Your Success Formula</h2>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
+            <div style="text-align: center;">
+                <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">1️⃣</div>
+                <h4 style="color: white; margin-bottom: 10px;">Consistency</h4>
+                <p>2 hours daily beats 14 hours weekly. Build the habit.</p>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">2️⃣</div>
+                <h4 style="color: white; margin-bottom: 10px;">Building</h4>
+                <p>Don't just watch. CODE. The struggle is where learning happens.</p>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">3️⃣</div>
+                <h4 style="color: white; margin-bottom: 10px;">Debugging</h4>
+                <p>Errors teach you more than working code. Embrace the struggle.</p>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">4️⃣</div>
+                <h4 style="color: white; margin-bottom: 10px;">Interview Ready</h4>
+                <p>Interview-ready projects. 3 real applications with auth and DB.</p>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">5️⃣</div>
+                <h4 style="color: white; margin-bottom: 10px;">Review</h4>
+                <p>Revisit old code. Refactor. Understand your own growth.</p>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">6️⃣</div>
+                <h4 style="color: white; margin-bottom: 10px;">Sharing</h4>
+                <p>Teach others. Write about what you learn. Solidify understanding.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Checklist Before Starting -->
+    <div class="content-section">
+        <h2>✅ Final Checklist - Ready to Start?</h2>
+
+        <div class="checklist">
+            <div class="checklist-item">
+                <input type="checkbox" id="final1">
+                <label for="final1">
+                    <strong>XAMPP installed and running</strong>
+                    <span class="desc">Can access http://localhost in browser</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="final2">
+                <label for="final2">
+                    <strong>VS Code configured with PHP extensions</strong>
+                    <span class="desc">PHP Intelephense, Code Runner, GitLens installed</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="final3">
+                <label for="final3">
+                    <strong>Workspace folder created</strong>
+                    <span class="desc">d:\xampp\htdocs\php_from_zero (your learning home)</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="final4">
+                <label for="final4">
+                    <strong>Git initialized and first commit made</strong>
+                    <span class="desc">git init, .gitignore created, first commit done</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="final5">
+                <label for="final5">
+                    <strong>GitHub repository created</strong>
+                    <span class="desc">Public repo, README.md pushed, ready to share</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="final6">
+                <label for="final6">
+                    <strong>Daily study time blocked in calendar</strong>
+                    <span class="desc">Same time every day. Protected. No exceptions.</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="final7">
+                <label for="final7">
+                    <strong>Motivation set</strong>
+                    <span class="desc">Why are you learning PHP? Keep that vision in front of you.</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 30px;">
+            <strong>🎯 You're ready! Start with Module 13: Database Basics today.</strong> Don't wait for tomorrow.
+            Don't wait for Monday. Now is the time. You've got everything you need. Let's go! 🚀
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="content-section"
+        style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; text-align: center;">
+        <h2 style="color: white; border-bottom-color: white;">Ready to Transform?</h2>
+        <p style="font-size: 1.1em; color: white; margin-bottom: 20px;">
+            You're 4-6 months away from becoming an expert PHP developer. Every great developer started exactly
+            where you are.
+        </p>
+        <a href="../modules/13_database_basics/lesson.php" class="cta-button">Start Module 13 Now →</a>
+    </div>
+
+    <!-- Navigation Footer -->
+    <div class="footer">
+        <p><strong>Your learning journey starts now</strong></p>
+        <p style="color: #999; margin-bottom: 20px;">One line of code at a time. One concept at a time. One day at a
+            time.</p>
+        <div class="breadcrumb" style="justify-content: center;">
+            <a href="LEARNING_PATH.php">← Learning Path</a>
+            <a href="README_ADVANCED.php">Strategies</a>
+            <a href="MASTERY_GUIDE.php">Mastery</a>
+            <a href="START_HERE.php">Dashboard</a>
+        </div>
+    </div>
     </div>
 
     <script>

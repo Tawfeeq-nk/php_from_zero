@@ -358,7 +358,6 @@
                 Strategies</a>
             <a href="MASTERY_GUIDE.php" style="color:#667eea;text-decoration:none;font-weight:500;">Mastery Guide</a>
             <a href="modules/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">All Modules</a>
-            <a href="projects/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Projects</a>
         </div>
         <!-- Header -->
         <div class="header">
@@ -446,10 +445,10 @@
 
                 <!-- Week 5 -->
                 <div class="timeline-item">
-                    <h3>🛠️ Week 5: Build Project 1</h3>
+                    <h3>🛠️ Week 5: Build Your First Application</h3>
                     <div class="time">Daily: 2-3 hours | Total: 15-25 hours</div>
                     <div class="modules">
-                        <p><strong>Project 1: Todo Application</strong></p>
+                        <p><strong>Todo Application:</strong></p>
                         <p>✓ Database design with users & todos tables</p>
                         <p>✓ User authentication system</p>
                         <p>✓ Full CRUD operations</p>
@@ -467,8 +466,7 @@
                         <p><strong>6 Advanced Modules:</strong></p>
                         <p>✓ Design Patterns, RESTful APIs, Testing & Debugging</p>
                         <p>✓ Authentication & Authorization, Performance Optimization, Deployment & DevOps</p>
-                        <p style="margin-top: 10px; color: #667eea;">Build Projects 2-3: Blog System & E-Commerce
-                            Platform</p>
+                        <p style="margin-top: 10px; color: #667eea;">Build more applications with advanced features</p>
                     </div>
                 </div>
 
@@ -479,7 +477,7 @@
                     <div class="modules">
                         <p><strong>6 Expert Modules:</strong></p>
                         <p>✓ Advanced OOP, Dependency Injection, Microservices, Docker, DevOps, System Design</p>
-                        <p style="margin-top: 10px; color: #667eea;">Build Project 4: Social Network - You're now an
+                        <p style="margin-top: 10px; color: #667eea;">Master enterprise-level architecture.
                             <strong>Expert-level</strong> developer!
                         </p>
                     </div>
@@ -510,7 +508,6 @@
             <p style="color: #666; margin-bottom: 20px;">Apply your fundamentals to real-world applications. Master
                 databases, security, and professional architecture. This is where you start building actual
                 applications.</p>
-            your first real-world application.</p>
 
             <div class="module-card">
                 <h4>Module 13: Database Basics</h4>
@@ -551,7 +548,7 @@
             <div class="info-box">
                 <strong>⏱️ Time Investment:</strong> 3-4 weeks (42-56 hours)
                 <br><strong>Daily Commitment:</strong> 1-2 hours
-                <br><strong>Next Goal:</strong> Complete Modules 13-18, then build Project 1 (Todo App)
+                <br><strong>Next Goal:</strong> Complete Modules 13-18, then build your first application
             </div>
 
             <a href="modules/13_database_basics/lesson.php" class="cta-button">↓ Start Module 13 Now!</a>
@@ -600,7 +597,7 @@
 
             <div class="info-box">
                 <strong>⏱️ Time Investment:</strong> 4-5 weeks (56-75 hours)
-                <br><strong>Projects:</strong> Blog System & E-Commerce Platform
+                <br><strong>Daily Commitment:</strong> 2-3 hours
                 <br><strong>Achievement:</strong> Reach Advanced-level developer status
             </div>
         </div>
@@ -648,7 +645,7 @@
 
             <div class="info-box">
                 <strong>⏱️ Time Investment:</strong> 4-5 weeks (70-100 hours)
-                <br><strong>Project:</strong> Social Network with Advanced Features
+                <br><strong>Daily Commitment:</strong> 3+ hours
                 <br><strong>Achievement:</strong> Expert-level PHP developer + Choose specialization
             </div>
         </div>
@@ -656,7 +653,7 @@
         <!-- Footer -->
         <div class="footer">
             <p><strong>Your Complete PHP Learning Path</strong></p>
-            <p style="color: #999;">30 modules | 4 real projects | 4-6 months to expert</p>
+            <p style="color: #999;">30 modules | Progressive learning | 4-6 months to expert</p>
             <div class="breadcrumb" style="justify-content: center;">
                 <a href="START_HERE.php">← Back to Dashboard</a>
                 <a href="README_ADVANCED.php">Learning Strategies →</a>

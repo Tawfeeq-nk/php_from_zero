@@ -376,7 +376,6 @@
             <a href="README_ADVANCED.php" style="color:#fa709a;text-decoration:none;font-weight:500;">Study
                 Strategies</a>
             <a href="modules/index.php" style="color:#fa709a;text-decoration:none;font-weight:500;">All Modules</a>
-            <a href="projects/index.php" style="color:#fa709a;text-decoration:none;font-weight:500;">Projects</a>
         </div>
         <!-- Header -->
         <div class="header">
@@ -602,7 +601,7 @@
 
                 <div class="career-step">
                     <h4>Mid-Level Developer (Months 7-18)</h4>
-                    <div class="time">After completing Modules 19-24 + Projects 2-3</div>
+                    <div class="time">After completing Modules 19-24</div>
                     <div class="content">
                         <p><strong>What you can do:</strong> Design features, lead small projects, make architectural
                             decisions, mentor juniors, own features end-to-end</p>

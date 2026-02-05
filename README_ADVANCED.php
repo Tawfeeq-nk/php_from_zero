@@ -344,7 +344,6 @@
                 Started</a>
             <a href="MASTERY_GUIDE.php" style="color:#f5576c;text-decoration:none;font-weight:500;">Mastery Guide</a>
             <a href="modules/index.php" style="color:#f5576c;text-decoration:none;font-weight:500;">All Modules</a>
-            <a href="projects/index.php" style="color:#f5576c;text-decoration:none;font-weight:500;">Projects</a>
         </div>
         <!-- Header -->
         <div class="header">

@@ -114,12 +114,11 @@
     <header class="hero">
         <div class="container">
             <h1>PHP From Zero — Learning Hub</h1>
-            <p>30-module guided system: fundamentals → projects → expert-level architectures</p>
+            <p>30-module guided system: fundamentals → intermediate → expert-level architectures</p>
             <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
                 <a class="btn btn-primary" href="START_HERE.php">Open Dashboard</a>
                 <a class="btn btn-outline" href="GETTING_STARTED.php">Getting Started</a>
                 <a class="btn btn-outline" href="modules/index.php">All Modules</a>
-                <a class="btn btn-outline" href="projects/index.php">Projects</a>
             </div>
         </div>
     </header>
@@ -145,13 +144,7 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>Projects</h3>
-                    <p class="muted">Todo, Blog, E‑Commerce, Social Network — plan and build as you learn.</p>
-                    <div class="features">
-                        <a class="btn btn-primary" href="projects/">View Projects</a>
-                    </div>
-                </div>
+
 
                 <div class="card">
                     <h3>Repository</h3>
@@ -169,7 +162,7 @@
             <p class="muted">This learning hub includes:</p>
             <ul>
                 <li>30 modules from fundamentals to expert systems</li>
-                <li>4 real projects to build and deploy</li>
+
                 <li>Interactive dashboards and study guides</li>
             </ul>
             <p class="meta">Updated: <?php echo date('Y-m-d'); ?> • PHP <?php echo phpversion(); ?></p>
@@ -183,7 +176,7 @@
                         <li>Open the main dashboard: <a href="START_HERE.php">START_HERE.php</a></li>
                         <li>Follow the learning path or start with <a href="GETTING_STARTED.php">Getting Started</a>
                         </li>
-                        <li>Build projects and push work to GitHub regularly</li>
+                        <li>Push your work to GitHub regularly</li>
                     </ol>
                 </div>
 

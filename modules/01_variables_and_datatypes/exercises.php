@@ -45,8 +45,6 @@
         <a href="../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Back to Modules</a>
         <span style="color:#ddd;">|</span>
         <a href="../../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Home</a>
-        <span style="color:#ddd;">|</span>
-        <a href="../../projects/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Projects</a>
     </div>
 
     <div class="exercise">

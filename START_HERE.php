@@ -245,7 +245,6 @@
                 Strategies</a>
             <a href="MASTERY_GUIDE.php" style="color:#667eea;text-decoration:none;font-weight:500;">Mastery Guide</a>
             <a href="modules/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">All Modules</a>
-            <a href="projects/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Projects</a>
         </div>
         <div class="header">
             <h1>🚀 PHP BACKEND LEARNING HUB</h1>
@@ -460,39 +459,7 @@
                 </div>
             </div>
 
-            <!-- Projects -->
-            <div class="section">
-                <h2>💼 Real-World Projects</h2>
-                <p style="margin-bottom: 20px; color: #666;">
-                    Build these projects to reinforce your learning and create a portfolio.
-                </p>
-                <div class="grid">
-                    <div class="card">
-                        <h3>📋 Project 1: Todo App</h3>
-                        <p>Database + User Auth + CRUD</p>
-                        <p style="font-size: 0.9em; color: #999; margin-top: 10px;">Intermediate Level</p>
-                        <a href="projects/01_todo_app/README.md" class="button">View Project</a>
-                    </div>
-                    <div class="card">
-                        <h3>📰 Project 2: Blog System</h3>
-                        <p>Posts + Comments + Search</p>
-                        <p style="font-size: 0.9em; color: #999; margin-top: 10px;">Intermediate-Advanced</p>
-                        <a href="projects/02_blog_system/README.md" class="button">View Project</a>
-                    </div>
-                    <div class="card">
-                        <h3>🛒 Project 3: E-Commerce</h3>
-                        <p>Products + Cart + Orders</p>
-                        <p style="font-size: 0.9em; color: #999; margin-top: 10px;">Advanced Level</p>
-                        <a href="projects/03_ecommerce/README.md" class="button">View Project</a>
-                    </div>
-                    <div class="card">
-                        <h3>👥 Project 4: Social Network</h3>
-                        <p>Profiles + Posts + Messaging</p>
-                        <p style="font-size: 0.9em; color: #999; margin-top: 10px;">Advanced-Expert</p>
-                        <a href="projects/04_social_network/README.md" class="button">View Project</a>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Study Timeline -->
             <div class="section">

@@ -47,8 +47,6 @@
         <a href="exercises.php" style="color:#667eea;text-decoration:none;font-weight:500;">Try Exercises →</a>
         <span style="color:#ddd;">|</span>
         <a href="../../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Home</a>
-        <span style="color:#ddd;">|</span>
-        <a href="../../projects/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Projects</a>
     </div>
 
     <h2>1. What are Variables?</h2>

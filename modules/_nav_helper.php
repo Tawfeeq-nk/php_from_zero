@@ -17,7 +17,7 @@ function renderModuleNav($moduleNumber, $moduleTitle, $isExercise = false)
     echo '<span style="color:#ddd;">|</span>';
     echo '<a href="../../index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Home</a>';
     echo '<span style="color:#ddd;">|</span>';
-    echo '<a href="../../projects/index.php" style="color:#667eea;text-decoration:none;font-weight:500;">Projects</a>';
+
     echo '</div>';
 }
 

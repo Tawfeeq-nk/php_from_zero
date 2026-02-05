@@ -16,7 +16,6 @@ if (!defined('PFZ_NAV_UI_INCLUDED')) {
         <a href="../../GETTING_STARTED.php" style="color:#667eea;text-decoration:none;font-weight:600;">Getting Started</a>
         <a href="../../README_ADVANCED.php" style="color:#667eea;text-decoration:none;font-weight:600;">Study Strategies</a>
         <a href="../../MASTERY_GUIDE.php" style="color:#667eea;text-decoration:none;font-weight:600;">Mastery Guide</a>
-        <a href="../../projects/index.php" style="color:#667eea;text-decoration:none;font-weight:600;">Projects</a>
     </div>
     <?php
 }
